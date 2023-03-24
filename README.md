@@ -2,38 +2,38 @@
 
 ## Things to do for final project : 
 
--create asset for map(s)
+- Create assets for map(s)
 
--build the map(s)
+- Build the map(s)
 
--redraw zombies and player for animation
+- Redraw zombies and player for animation
 
--better asset for bullets 
+- Create better assets for bullets
 
--draw asset for pop ups (max ammo, nuke, health kit, grenade ?)
+- Draw assets for pop-ups (max ammo, nuke, health kit, grenade?)
 
--add miusic +audio
+- Add music and audio
 
--movement of the player 
+- Implement movement of the player
 
--movement of zombies
+- Implement movement of zombies
 
--Main menu , pause menu , death menu + score
+- Create main menu, pause menu, death menu + score
 
--2d lights
+- Add 2D lights
 
--add spawners
+- Add spawners
 
--code waves switch and difficulty switch
+- Code wave switch and difficulty switch
 
--UI (health bar)
+- Design UI (health bar)
 
--ammo station 
+- Implement ammo station
 
--coin drop ?? 
+- Add coin drop
 
--blood particle effects 
+- Add blood particle effects
 
--knock back for player and and zombies when hit
+- Implement knockback for player and zombies when hit
 
--flash effect when hit 
+- Add flash effect when hit"
