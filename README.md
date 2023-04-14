@@ -12,28 +12,22 @@
 
 - Draw assets for pop-ups (max ammo, nuke, health kit, grenade?)
 
-- Add music and audio
+- Maybe add music and audio ?? 
 
-- Implement movement of the player
+- Implement movement of the player + animation
 
-- Implement movement of zombies
+- Implement movement of zombies + animation
 
 - Create main menu, pause menu, death menu + score
 
-- Add 2D lights
+- Add Fog (particle effect)
 
 - Add spawners
 
-- Code wave switch and difficulty switch
+- Code Score 
 
 - Design UI (health bar)
 
 - Implement ammo station
-
-- Add coin drop
-
-- Add blood particle effects
-
-- Implement knockback for player and zombies when hit
 
 - Add flash effect when hit"
