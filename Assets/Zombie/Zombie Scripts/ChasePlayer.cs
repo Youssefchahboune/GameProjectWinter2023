@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class ChasePlayer : MonoBehaviour
 {
-    public Transform playerTransform;
-    public float speed = 3f;
+    private Transform playerTransform;
+    public float speed;
+
+    private void Start()
+    {
+        playerTransform = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<Transform>();
+        speed = Random.Range(2f, 4f);
+    }
 
     void Update()
     {

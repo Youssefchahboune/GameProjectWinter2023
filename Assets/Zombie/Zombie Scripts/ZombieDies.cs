@@ -14,10 +14,12 @@ public class ZombieDies : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag(bulletTag))
         {
+            Destroy(collision.gameObject);
+
             currentHealth--;
             if (currentHealth <= 0)
             {
