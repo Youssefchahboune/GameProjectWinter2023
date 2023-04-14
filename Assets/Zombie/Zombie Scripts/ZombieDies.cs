@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class ZombieDies : MonoBehaviour
 {
-    public int maxHealth = 3;
+    public int maxHealth;
     public int currentHealth;
     public string bulletTag = "Bullet";
 
     void Start()
     {
+        maxHealth = Random.Range(1, 4);
         currentHealth = maxHealth;
     }
 
@@ -28,6 +29,6 @@ public class ZombieDies : MonoBehaviour
     void Die()
     {
   
-        Destroy(gameObject, 0.5f);
+        Destroy(gameObject);
     }
 }
