@@ -820,6 +820,7 @@ GameObject:
   - component: {fileID: 715723155}
   - component: {fileID: 715723156}
   - component: {fileID: 715723157}
+  - component: {fileID: 715723158}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -976,6 +977,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &715723158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715723149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f13c07f88df0a74f910769aa322c594, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  healthObject: {fileID: 0}
+  zombieTag: 
 --- !u!1 &745878450
 GameObject:
   m_ObjectHideFlags: 0
@@ -2318,6 +2335,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1104498230474799019, guid: 580d5e1002c33794e8b8de1cb32d86d0, type: 3}
       propertyPath: m_Name
+      value: Zombie
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104498230474799019, guid: 580d5e1002c33794e8b8de1cb32d86d0, type: 3}
+      propertyPath: m_TagString
       value: Zombie
       objectReference: {fileID: 0}
     - target: {fileID: 3271068514999846647, guid: 580d5e1002c33794e8b8de1cb32d86d0, type: 3}
