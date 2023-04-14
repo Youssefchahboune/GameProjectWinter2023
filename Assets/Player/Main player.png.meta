@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -105,7 +105,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Main player_0
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 1199
+        width: 453
+        height: 449
+      alignment: 9
+      pivot: {x: 0.2255183, y: 0.13653333}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6652910af999ea544a98b0fe4aaf0b76
+      internalID: 1010695969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main player_1
+      rect:
+        serializedVersion: 2
+        x: 1322
+        y: 847
+        width: 103
+        height: 1085
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36d9941ef514d3042a39e64aa47c076b
+      internalID: -1329467688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main player_2
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 599
+        width: 301
+        height: 681
+      alignment: 9
+      pivot: {x: 0.28054598, y: 0.10630164}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2e9b121fd5e97c45a1af0730ded4e90
+      internalID: 1958335260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main player_3
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 218
+        width: 551
+        height: 616
+      alignment: 9
+      pivot: {x: 0.73271453, y: 0.43692142}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fdc78b51acc91f4b8a0b610540ed0fe
+      internalID: 816053201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -116,7 +200,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Main player_0: 1010695969
+      Main player_1: -1329467688
+      Main player_2: 1958335260
+      Main player_3: 816053201
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
