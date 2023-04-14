@@ -1992,6 +1992,8 @@ GameObject:
   - component: {fileID: 1215196604}
   - component: {fileID: 1215196606}
   - component: {fileID: 1215196605}
+  - component: {fileID: 1215196607}
+  - component: {fileID: 1215196608}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -2007,7 +2009,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1215196602}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.73, y: -0.01, z: 0.07048547}
+  m_LocalPosition: {x: 2.73, y: -0.01, z: 1}
   m_LocalScale: {x: 0.29488617, y: 0.29488617, z: 0.29488617}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2103,6 +2105,35 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1215196607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215196602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d081ca12ae182429ca57eb9aaaab66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 715723153}
+  speed: 3
+--- !u!114 &1215196608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215196602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c86a25431b17cfa478595e42dc9c78f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  currentHealth: 0
+  bulletTag: Bullet
 --- !u!1 &1262751329
 GameObject:
   m_ObjectHideFlags: 0
