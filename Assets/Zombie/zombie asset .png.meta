@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -105,7 +105,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: zombie asset _0
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 976
+        width: 144
+        height: 267
+      alignment: 9
+      pivot: {x: 0.44528028, y: 0.13602015}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc7bad98b652e3d4f81c820a98a33ca4
+      internalID: 1573711128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie asset _1
+      rect:
+        serializedVersion: 2
+        x: 977
+        y: 988
+        width: 167
+        height: 263
+      alignment: 9
+      pivot: {x: 0.73591876, y: 0.16044495}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2945d48f336b304d9fcf25bd5741d46
+      internalID: 1966528943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie asset _2
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 539
+        width: 157
+        height: 233
+      alignment: 9
+      pivot: {x: 0.7007561, y: 0.17308916}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77762a8f19c77c8438da70d8425a26b1
+      internalID: -356649159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie asset _3
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 366
+        width: 401
+        height: 288
+      alignment: 9
+      pivot: {x: 0.5524004, y: 0.49088034}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d2101ec4956b874bbe816924907bf48
+      internalID: -401004751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie asset _4
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 554
+        width: 158
+        height: 234
+      alignment: 9
+      pivot: {x: 0.3005147, y: 0.1857112}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 477bf127ace90184cb75e1c6a50572d7
+      internalID: -983381320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -116,7 +221,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      zombie asset _0: 1573711128
+      zombie asset _1: 1966528943
+      zombie asset _2: -356649159
+      zombie asset _3: -401004751
+      zombie asset _4: -983381320
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
