@@ -10,6 +10,7 @@ public class Shooting : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject firePoint;
     public GameObject gunFire;
+    public Animator anim;
 
     void Start()
     {
@@ -24,7 +25,8 @@ public class Shooting : MonoBehaviour
             shootBullet();
             gunFire.SetActive(true);
             Invoke("setGunFireSctiveToFalse",0.1f);
-            
+            anim.SetBool("isShooting", true);
+            Invoke("setIsShootingToFalse",0.1f);           
         }
         
         
@@ -47,5 +49,10 @@ public class Shooting : MonoBehaviour
     public void setGunFireSctiveToFalse()
     {
         gunFire.SetActive(false);
+    }
+
+    public void setIsShootingToFalse()
+    {
+        anim.SetBool("isShooting", false);
     }
 }
