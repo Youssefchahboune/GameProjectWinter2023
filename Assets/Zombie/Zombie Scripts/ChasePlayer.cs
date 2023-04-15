@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChasePlayer : MonoBehaviour
 {
     private Transform playerTransform;
-    public float speed;
+    [SerializeField] private float speed;
 
     private void Start()
     {

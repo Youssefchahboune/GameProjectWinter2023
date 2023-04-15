@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ZombieDies : MonoBehaviour
 {
-    public int maxHealth;
-    public int currentHealth;
-    public string bulletTag = "Bullet";
+    [SerializeField] private int maxHealth;
+    [SerializeField] private int currentHealth;
+    [SerializeField] private string bulletTag = "Bullet";
 
     void Start()
     {
