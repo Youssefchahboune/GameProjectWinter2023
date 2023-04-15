@@ -14,7 +14,7 @@ public class HitByZombie : MonoBehaviour
     private GameObject healthObject;
 
     private bool zombieIsTouching = false;
-    private float timer = 1f;
+    public float timer = 1f;
 
     public Material flashMaterial;
     private List<SpriteRenderer> childSpriteRenderers = new List<SpriteRenderer>();
