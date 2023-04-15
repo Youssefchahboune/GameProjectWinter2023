@@ -17,6 +17,7 @@ public class HitByZombie : MonoBehaviour
         UpdateHealthText();
     }
 
+
     void OnCollisionEnter2D(Collision2D collision)
     {
        
