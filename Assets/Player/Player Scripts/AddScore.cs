@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class AddScore : MonoBehaviour
 {
     public GameObject scoreObject;
-    private int score = 500;
+    private static int score = 500;
     public string bulletTag = "Bullet";
 
     void Start()

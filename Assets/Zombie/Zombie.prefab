@@ -181,7 +181,8 @@ GameObject:
   - component: {fileID: 4844205138683611972}
   - component: {fileID: 4535620939869350937}
   - component: {fileID: 7158134890538930635}
-  - component: {fileID: 4738456052033159806}
+  - component: {fileID: 2942816063702530588}
+  - component: {fileID: 2880113583557158170}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Zombie
@@ -286,8 +287,23 @@ MonoBehaviour:
   maxHealth: 3
   currentHealth: 0
   bulletTag: Bullet
---- !u!70 &4738456052033159806
-CapsuleCollider2D:
+  flashMaterial: {fileID: 2100000, guid: 823de309bce70ab49afc18cff3222f37, type: 2}
+--- !u!114 &2942816063702530588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104498230474799019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa70d09a250083419c7e21dd6d0d07c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreObject: {fileID: 0}
+  bulletTag: Bullet
+--- !u!58 &2880113583557158170
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -318,9 +334,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.99, y: 0.21}
-  m_Size: {x: 4.93, y: 2.65}
-  m_Direction: 1
+  m_Offset: {x: -0.92, y: 1.04}
+  serializedVersion: 2
+  m_Radius: 2.3
 --- !u!1 &1837489026811010830
 GameObject:
   m_ObjectHideFlags: 0
