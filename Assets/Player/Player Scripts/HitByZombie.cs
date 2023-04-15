@@ -5,10 +5,13 @@ using UnityEngine.UI;
 
 public class HitByZombie : MonoBehaviour
 {
-    public int maxHealth = 100;
-    public int currentHealth;
-    public GameObject healthObject;
-    public string zombieTag = "Zombie";
+    [SerializeField]
+    private int maxHealth = 100;
+    [SerializeField]
+    private int currentHealth;
+    [SerializeField]
+    private GameObject healthObject;
+
 
     void Start()
     {
@@ -20,14 +23,15 @@ public class HitByZombie : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-       
+        if (collision.gameObject.CompareTag("Zombie"))
+        {
             currentHealth -= 10;
             UpdateHealthText();
             if (currentHealth <= 0)
             {
                 Die();
             }
-        
+        }
     }
 
     void Die()
