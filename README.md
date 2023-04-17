@@ -2,21 +2,21 @@
 
 ## Things to do for final project : 
 
-- Create assets for map(s)
+<del> Create assets for map(s) </del>
 
 - Build the map(s)
 
-- Redraw zombies and player for animation
+<del> Redraw zombies and player for animation  </del>
 
-- Create better assets for bullets
+<del> Create better assets for bullets  </del>
 
-- Draw assets for pop-ups (max ammo, nuke, health kit, grenade?)
+<del> Draw assets for pop-ups (max ammo, nuke, health kit, grenade?)  </del>
 
 - Maybe add music and audio ?? 
 
-- Implement movement of the player + animation
+<del> Implement movement of the player + animation  </del>
 
-- Implement movement of zombies + animation
+<del> Implement movement of zombies + animation  </del>
 
 - Create main menu, pause menu, death menu + score
 
@@ -24,10 +24,14 @@
 
 - Add spawners
 
-- Code Score 
+<del> Code Score  </del>
 
-- Design UI (health bar)
+<del> Design UI (health bar)  </del>
 
 - Implement ammo station
 
-- Add flash effect when hit"
+<del> Add flash effect when hit"  </del>
+
+# Progress (2023-04-16)
+![image](https://user-images.githubusercontent.com/99833243/232360770-d657c494-1653-4e1f-a736-a59e664ed29e.png)
+
