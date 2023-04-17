@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DropSpawner : MonoBehaviour
 {
-    public GameObject[] drops; // an array of the 5 drops to be randomly selected
+    public GameObject[] drops; // an array of the 4 drops to be randomly selected
     public float dropInterval = 30f; // the interval in seconds between drops
 
     private int lastDropIndex = -1; // the index of the last drop that was spawned
