@@ -42,6 +42,9 @@ public class HitByZombie : MonoBehaviour
 
     void Update()
     {
+
+        UpdateHealthText();
+
         if (zombieIsTouching)
         {
             timer -= Time.deltaTime;
@@ -101,7 +104,7 @@ public class HitByZombie : MonoBehaviour
         }
     }
 
-    void Die()
+    public static void Die()
     {
         ZombieSpawns.count = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

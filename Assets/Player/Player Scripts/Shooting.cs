@@ -13,6 +13,7 @@ public class Shooting : MonoBehaviour
     public GameObject firePoint;
     public GameObject gunFire;
     public Animator anim;
+    public GameObject grenade;
 
     public static int maxBulllets = 100;
     public static int currentAmountOfBullet;
@@ -54,6 +55,11 @@ public class Shooting : MonoBehaviour
             Destroy(bullet, 0.3f);
 
         }*/
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            Instantiate(grenade,transform.position, Quaternion.identity);
+        }
     }
 
     public void shootBullet()

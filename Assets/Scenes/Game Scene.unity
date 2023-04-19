@@ -15413,6 +15413,37 @@ RectTransform:
   m_AnchoredPosition: {x: 960, y: 540}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &553364320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 553364321}
+  m_Layer: 0
+  m_Name: Dir
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &553364321
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553364320}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 31, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1402108799}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &553977270
 GameObject:
   m_ObjectHideFlags: 0
@@ -18779,7 +18810,6 @@ GameObject:
   - component: {fileID: 715723157}
   - component: {fileID: 715723158}
   - component: {fileID: 715723159}
-  - component: {fileID: 715723160}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -18854,6 +18884,7 @@ MonoBehaviour:
   firePoint: {fileID: 1402108798}
   gunFire: {fileID: 625218160}
   anim: {fileID: 715723157}
+  grenade: {fileID: 5800455302643115615, guid: 3f0ae1d72d73311448559e280445915f, type: 3}
   bulletsLeftText: {fileID: 776002626}
 --- !u!50 &715723156
 Rigidbody2D:
@@ -18954,23 +18985,6 @@ CircleCollider2D:
   m_Offset: {x: 0.25, y: 1.46}
   serializedVersion: 2
   m_Radius: 4.8622236
---- !u!114 &715723160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 715723149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dd52df7ba5f21041aa10fc1d627f4a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grenadeSpeed: 30
-  grenadePrefab: {fileID: 7184066900013520252, guid: fe8f4463324c5b9469dae97f50a0b2b9, type: 3}
-  firePoint: {fileID: 1402108798}
-  grenadesLeftText: {fileID: 751141157}
-  explosionRadius: 5
 --- !u!1 &721079747
 GameObject:
   m_ObjectHideFlags: 0
@@ -30815,7 +30829,8 @@ Transform:
   m_LocalPosition: {x: 1.47, y: 12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 553364321}
   m_Father: {fileID: 715723153}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
