@@ -10,8 +10,9 @@ public class ZombieSpawns : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Call SpawnZombies every 5 seconds
-        InvokeRepeating("SpawnZombies", 5f, 5f);
+       
+        // Call SpawnZombies every 6 seconds
+        InvokeRepeating("SpawnZombies", 5f, 6f);
     }
 
     void SpawnZombies()
