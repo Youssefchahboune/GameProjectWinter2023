@@ -131,4 +131,9 @@ public class HitByZombie : MonoBehaviour
             childSpriteRenderers[i].material = originalMaterials[i];
         }
     }
+    public int GetCurrentHealth()
+    {
+        return currentHealth;
+    }
+
 }
