@@ -110,10 +110,16 @@ public class HitByZombie : MonoBehaviour
         Text healthText = healthObject.GetComponent<Text>();
         if (healthText != null)
         {
-            healthText.text = currentHealth + "/ 100";
+            healthText.text = currentHealth + " / 100";
         }
 
         
+    }
+
+    public void RestoreHealth(int amount)
+    {
+        currentHealth = Mathf.Clamp(currentHealth + amount, 0, 100);
+        UpdateHealthText();
     }
 
     void setPlayerMaterialToOriginal()
