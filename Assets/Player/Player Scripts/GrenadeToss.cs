@@ -53,6 +53,7 @@ public class GrenadeToss : MonoBehaviour
             if (collider.CompareTag("Zombie"))
             {
                 Destroy(collider.gameObject,2f);
+                ZombieDies.countOfDeadZombies++;
             }
         }
     }

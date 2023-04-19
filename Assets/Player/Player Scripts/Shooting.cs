@@ -18,6 +18,8 @@ public class Shooting : MonoBehaviour
     public static int currentAmountOfBullet;
     public Text bulletsLeftText;
 
+    
+
     void Start()
     {
         currentAmountOfBullet = maxBulllets;

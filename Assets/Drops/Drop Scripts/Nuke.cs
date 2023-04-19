@@ -13,6 +13,7 @@ public class Nuke : MonoBehaviour
             foreach (GameObject zombie in zombies)
             {
                 Destroy(zombie);
+                ZombieDies.countOfDeadZombies++;
             }
 
             ZombieSpawns.count = 0;

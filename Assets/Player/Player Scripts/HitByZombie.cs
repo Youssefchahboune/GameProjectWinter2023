@@ -21,6 +21,7 @@ public class HitByZombie : MonoBehaviour
     private List<Material> originalMaterials = new List<Material>();
 
 
+
     void Start()
     {
 
