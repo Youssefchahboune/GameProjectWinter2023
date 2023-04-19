@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -105,7 +105,78 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: grenade assets_1
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 855
+        width: 459
+        height: 562
+      alignment: 9
+      pivot: {x: 0.04144071, y: 0.53124654}
+      border: {x: 0, y: 0, z: 0, w: 369}
+      outline:
+      - - {x: 0, y: -410}
+        - {x: 660.5, y: 0}
+        - {x: 0, y: 410}
+        - {x: -660.5, y: 0}
+      physicsShape:
+      - - {x: 0, y: -410}
+        - {x: 660.5, y: 0}
+        - {x: 0, y: 410}
+        - {x: -660.5, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8105a19c7c27e1e4f8b52f3e39c2d163
+      internalID: 296743775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grenade assets_0
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 834
+        width: 440
+        height: 618
+      alignment: 9
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 348}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e68e0102dd67550429cf01db14f51d18
+      internalID: 1598539256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grenade assets_2
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 0
+        width: 715
+        height: 738
+      alignment: 9
+      pivot: {x: 0.026229056, y: 0.53164154}
+      border: {x: 0, y: 0, z: 374, w: 309}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bb6a5e2faeaf9d46a05b163710a7fcf
+      internalID: -1326316020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -116,7 +187,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      grenade assets_0: 1598539256
+      grenade assets_1: 296743775
+      grenade assets_2: -1326316020
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
