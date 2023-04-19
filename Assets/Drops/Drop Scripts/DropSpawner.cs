@@ -5,7 +5,7 @@ using UnityEngine;
 public class DropSpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] dropPrefab; 
-    [SerializeField] float dropInterval = 30f;
+    [SerializeField] float dropInterval = 45f;
     [SerializeField] float minXTras;
     [SerializeField] float maxXTras;
     [SerializeField] float minYTras;
@@ -35,7 +35,7 @@ public class DropSpawner : MonoBehaviour
             var position = new Vector2(spawnXPosition, spawnYPosition);
 
             GameObject gameObject = Instantiate(dropPrefab[dropIndex], position, Quaternion.identity);
-            Destroy(gameObject, 10f);
+            Destroy(gameObject, 20f);
             yield return new WaitForSeconds(dropInterval);
         }
     }
