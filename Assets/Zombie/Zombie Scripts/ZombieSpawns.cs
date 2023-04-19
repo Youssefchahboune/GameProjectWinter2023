@@ -6,10 +6,7 @@ public class ZombieSpawns : MonoBehaviour
 {
     [SerializeField]
     private GameObject zombiePrefab;
-    [SerializeField]
-    private int minZombies = 1;
-    [SerializeField]
-    private int maxZombies = 3;
+  
     // Start is called before the first frame update
     void Start()
     {
@@ -19,12 +16,9 @@ public class ZombieSpawns : MonoBehaviour
 
     void SpawnZombies()
     {
-        int numZombies = Random.Range(minZombies, maxZombies);
-
-        for (int i = 0; i < numZombies; i++)
-        {
+        
             Instantiate(zombiePrefab, transform.position, Quaternion.identity);
-        }
+        
     }
 
     // Update is called once per frame
