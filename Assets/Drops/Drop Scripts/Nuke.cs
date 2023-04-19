@@ -8,13 +8,16 @@ public class Nuke : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Destroy(gameObject);
 
             GameObject[] zombies = GameObject.FindGameObjectsWithTag("Zombie");
             foreach (GameObject zombie in zombies)
             {
                 Destroy(zombie);
             }
+
+            ZombieSpawns.count = 0;
+            Destroy(gameObject);
+
         }
     }
 }
