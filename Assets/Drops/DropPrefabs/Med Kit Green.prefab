@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4945983555835306849}
   - component: {fileID: 1355654842196815650}
   - component: {fileID: 5205054317981919150}
+  - component: {fileID: -2303767046495851089}
   m_Layer: 0
   m_Name: Med Kit Green
   m_TagString: Untagged
@@ -114,7 +115,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -463,3 +464,15 @@ PolygonCollider2D:
       - {x: 0.5762474, y: -4.3737173}
       - {x: 0.91047084, y: -4.304568}
   m_UseDelaunayMesh: 0
+--- !u!114 &-2303767046495851089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4450728175774364790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b575fab352bf2c47bb950d8ab32d64d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
