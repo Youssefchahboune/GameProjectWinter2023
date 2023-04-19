@@ -37359,7 +37359,7 @@ GameObject:
   - component: {fileID: 1765534086}
   - component: {fileID: 1765534085}
   m_Layer: 0
-  m_Name: Drop
+  m_Name: Scripts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
