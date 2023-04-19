@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DropSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject[] dropPrefab; 
+    [SerializeField] GameObject[] dropPrefab;
     [SerializeField] float dropInterval = 45f;
     [SerializeField] float minXTras;
     [SerializeField] float maxXTras;
@@ -21,7 +21,7 @@ public class DropSpawner : MonoBehaviour
     IEnumerator DropSpawn()
     {
         int dropIndex = Random.Range(0, dropPrefab.Length);
-        while(true)
+        while (true)
         {
             while (dropIndex == lastDropIndex)
             {
@@ -29,14 +29,36 @@ public class DropSpawner : MonoBehaviour
             }
             lastDropIndex = dropIndex;
 
-            var spawnXPosition = Random.Range(minXTras, maxXTras);
-            var spawnYPosition = Random.Range(minYTras, maxYTras);
+            bool isPositionValid = false;
+            Vector2 position = Vector2.zero;
+            while (!isPositionValid)
+            {
+                position = GetRandomPosition();
 
-            var position = new Vector2(spawnXPosition, spawnYPosition);
+                Collider2D[] colliders = Physics2D.OverlapCircleAll(position, 1f);
+                isPositionValid = true;
+
+                foreach (Collider2D collider in colliders)
+                {
+                    if (collider.CompareTag("Crate") || collider.CompareTag("Ammo Station"))
+                    {
+                        isPositionValid = false;
+                        break;
+                    }
+                }
+            }
 
             GameObject gameObject = Instantiate(dropPrefab[dropIndex], position, Quaternion.identity);
             Destroy(gameObject, 20f);
+
             yield return new WaitForSeconds(dropInterval);
         }
+    }
+
+    private Vector2 GetRandomPosition()
+    {
+        float spawnXPosition = Random.Range(minXTras, maxXTras);
+        float spawnYPosition = Random.Range(minYTras, maxYTras);
+        return new Vector2(spawnXPosition, spawnYPosition);
     }
 }

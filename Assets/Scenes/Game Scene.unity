@@ -2016,7 +2016,7 @@ GameObject:
   - component: {fileID: 99618670}
   m_Layer: 0
   m_Name: Create2_0 (7)
-  m_TagString: Untagged
+  m_TagString: Crate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8595,7 +8595,7 @@ GameObject:
   - component: {fileID: 451931332}
   m_Layer: 0
   m_Name: Create2_0 (3)
-  m_TagString: Untagged
+  m_TagString: Crate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9858,7 +9858,7 @@ GameObject:
   - component: {fileID: 521831084}
   m_Layer: 0
   m_Name: Ammo Station (2)
-  m_TagString: Untagged
+  m_TagString: Ammo Station
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10177,7 +10177,7 @@ GameObject:
   - component: {fileID: 534848260}
   m_Layer: 0
   m_Name: Create2_0 (4)
-  m_TagString: Untagged
+  m_TagString: Crate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12660,7 +12660,7 @@ GameObject:
   - component: {fileID: 674442419}
   m_Layer: 0
   m_Name: Create2_0 (6)
-  m_TagString: Untagged
+  m_TagString: Crate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13922,7 +13922,7 @@ GameObject:
   - component: {fileID: 730338691}
   m_Layer: 0
   m_Name: Create2_0 (2)
-  m_TagString: Untagged
+  m_TagString: Crate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23889,7 +23889,7 @@ GameObject:
   - component: {fileID: 1306286314}
   m_Layer: 0
   m_Name: Create2_0 (1)
-  m_TagString: Untagged
+  m_TagString: Crate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24135,7 +24135,7 @@ GameObject:
   - component: {fileID: 1319648983}
   m_Layer: 0
   m_Name: Ammo Station (1)
-  m_TagString: Untagged
+  m_TagString: Ammo Station
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38310,7 +38310,7 @@ GameObject:
   - component: {fileID: 1860246127}
   m_Layer: 0
   m_Name: Create2_0 (5)
-  m_TagString: Untagged
+  m_TagString: Crate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48569,7 +48569,7 @@ GameObject:
   - component: {fileID: 2143868899}
   m_Layer: 0
   m_Name: Ammo Station
-  m_TagString: Untagged
+  m_TagString: Ammo Station
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
