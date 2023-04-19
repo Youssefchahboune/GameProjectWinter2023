@@ -45,7 +45,7 @@ public class Shooting : MonoBehaviour
         }
 
 
-        /*else if(Input.GetMouseButton(1))
+        /*else if(Input.GetMouseButton(0))
         {
             GameObject bullet = Instantiate(bulletPrefab,firePoint.transform.position,firePoint.transform.rotation);
             bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.transform.up * bulletSpeed, ForceMode2D.Impulse);

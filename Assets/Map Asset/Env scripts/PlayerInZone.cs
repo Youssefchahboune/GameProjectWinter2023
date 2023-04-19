@@ -19,9 +19,9 @@ public class PlayerInZone : MonoBehaviour
     {
         if (can.enabled == true)
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift) && SetStartScore.score >= 250 && Shooting.currentAmountOfBullet != Shooting.maxBulllets)
+            if (Input.GetKeyDown(KeyCode.LeftShift) && AddScore.score >= 250 && Shooting.currentAmountOfBullet != Shooting.maxBulllets)
             {
-                SetStartScore.score -= 250;
+                AddScore.score -= 250;
                 Shooting.currentAmountOfBullet = Shooting.maxBulllets;
             }
         }

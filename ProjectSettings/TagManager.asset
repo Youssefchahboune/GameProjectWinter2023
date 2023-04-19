@@ -12,6 +12,8 @@ TagManager:
   - Danger Tape
   - Ammo Station Indiv.
   - Spawner
+  - Station Canvas
+  - station
   layers:
   - Default
   - TransparentFX

@@ -6,12 +6,17 @@ using UnityEngine.UI;
 public class AddScore : MonoBehaviour
 {
     private GameObject scoreObject;
-    private static int score = 500;
+    public static int score = 500;
     public string bulletTag = "Bullet";
 
     void Start()
     {
         scoreObject = GameObject.Find("Score");
+        UpdateScoreText();
+    }
+
+    private void Update()
+    {
         UpdateScoreText();
     }
 
@@ -21,7 +26,6 @@ public class AddScore : MonoBehaviour
         if (collision.gameObject.CompareTag(bulletTag))
         {
             score += 10;
-            UpdateScoreText();
         }
     }
 
@@ -36,6 +40,10 @@ public class AddScore : MonoBehaviour
     public void AddPoints(int points)
     {
         score += points;
-        UpdateScoreText();
+    }
+
+    public void buyWithPoints(int points)
+    {
+        score -= points;
     }
 }
