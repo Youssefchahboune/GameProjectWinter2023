@@ -1761,7 +1761,7 @@ GameObject:
   - component: {fileID: 78225097}
   m_Layer: 0
   m_Name: Danger Tape Right
-  m_TagString: Untagged
+  m_TagString: Danger Tape
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18194,7 +18194,7 @@ GameObject:
   - component: {fileID: 971011544}
   m_Layer: 0
   m_Name: Danger Tape Bottom
-  m_TagString: Untagged
+  m_TagString: Danger Tape
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19957,7 +19957,7 @@ GameObject:
   - component: {fileID: 1058091266}
   m_Layer: 0
   m_Name: Danger Tapes
-  m_TagString: Untagged
+  m_TagString: Danger Tape
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29075,7 +29075,7 @@ GameObject:
   - component: {fileID: 1561915851}
   m_Layer: 0
   m_Name: Danger Tape Left
-  m_TagString: Untagged
+  m_TagString: Danger Tape
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46726,7 +46726,7 @@ GameObject:
   - component: {fileID: 2067487140}
   m_Layer: 0
   m_Name: Danger Tape Top
-  m_TagString: Untagged
+  m_TagString: Danger Tape
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

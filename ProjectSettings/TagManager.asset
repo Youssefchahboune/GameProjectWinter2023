@@ -9,6 +9,7 @@ TagManager:
   - Zombie
   - Crate
   - Ammo Station
+  - Danger Tape
   layers:
   - Default
   - TransparentFX
