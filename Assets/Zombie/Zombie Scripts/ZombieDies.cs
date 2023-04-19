@@ -14,7 +14,7 @@ public class ZombieDies : MonoBehaviour
 
     void Start()
     {
-        maxHealth = Random.Range(1, 4);
+        maxHealth = Random.Range(2, 4);
         currentHealth = maxHealth;
 
         foreach (Transform child in transform)
