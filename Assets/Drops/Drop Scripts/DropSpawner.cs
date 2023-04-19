@@ -20,6 +20,7 @@ public class DropSpawner : MonoBehaviour
 
     IEnumerator DropSpawn()
     {
+        yield return new WaitForSeconds(10f);
         int dropIndex = Random.Range(0, dropPrefab.Length);
         while (true)
         {
