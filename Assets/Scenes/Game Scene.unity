@@ -1308,7 +1308,7 @@ GameObject:
   - component: {fileID: 56186030}
   m_Layer: 0
   m_Name: AMMO Station_0 (2)
-  m_TagString: Untagged
+  m_TagString: Ammo Station Indiv.
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1677,7 +1677,7 @@ GameObject:
   - component: {fileID: 74612608}
   m_Layer: 0
   m_Name: AMMO Station_0 (5)
-  m_TagString: Untagged
+  m_TagString: Ammo Station Indiv.
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5715,7 +5715,7 @@ GameObject:
   - component: {fileID: 292412625}
   m_Layer: 0
   m_Name: AMMO Station_0
-  m_TagString: Untagged
+  m_TagString: Ammo Station Indiv.
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8401,7 +8401,7 @@ GameObject:
   - component: {fileID: 444049162}
   m_Layer: 0
   m_Name: AMMO Station_0 (5)
-  m_TagString: Untagged
+  m_TagString: Ammo Station Indiv.
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8784,7 +8784,7 @@ GameObject:
   - component: {fileID: 456381621}
   m_Layer: 0
   m_Name: AMMO Station_0
-  m_TagString: Untagged
+  m_TagString: Ammo Station Indiv.
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10999,7 +10999,7 @@ GameObject:
   - component: {fileID: 569410782}
   m_Layer: 0
   m_Name: AMMO Station_0 (1)
-  m_TagString: Untagged
+  m_TagString: Ammo Station Indiv.
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11510,7 +11510,7 @@ GameObject:
   - component: {fileID: 607251506}
   m_Layer: 0
   m_Name: AMMO Station_0 (1)
-  m_TagString: Untagged
+  m_TagString: Ammo Station Indiv.
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13106,7 +13106,7 @@ GameObject:
   - component: {fileID: 689073516}
   m_Layer: 0
   m_Name: AMMO Station_0 (4)
-  m_TagString: Untagged
+  m_TagString: Ammo Station Indiv.
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18683,7 +18683,7 @@ GameObject:
   - component: {fileID: 983038921}
   m_Layer: 0
   m_Name: AMMO Station_0 (3)
-  m_TagString: Untagged
+  m_TagString: Ammo Station Indiv.
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18768,7 +18768,7 @@ GameObject:
   - component: {fileID: 987610209}
   m_Layer: 0
   m_Name: AMMO Station_0
-  m_TagString: Untagged
+  m_TagString: Ammo Station Indiv.
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20142,7 +20142,7 @@ GameObject:
   - component: {fileID: 1061948126}
   m_Layer: 0
   m_Name: AMMO Station_0 (3)
-  m_TagString: Untagged
+  m_TagString: Ammo Station Indiv.
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20347,7 +20347,7 @@ GameObject:
   - component: {fileID: 1065631427}
   m_Layer: 0
   m_Name: AMMO Station_0 (4)
-  m_TagString: Untagged
+  m_TagString: Ammo Station Indiv.
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26877,7 +26877,7 @@ GameObject:
   - component: {fileID: 1449545516}
   m_Layer: 0
   m_Name: AMMO Station_0 (3)
-  m_TagString: Untagged
+  m_TagString: Ammo Station Indiv.
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28042,7 +28042,7 @@ GameObject:
   - component: {fileID: 1496817064}
   m_Layer: 0
   m_Name: AMMO Station_0 (2)
-  m_TagString: Untagged
+  m_TagString: Ammo Station Indiv.
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36098,7 +36098,7 @@ GameObject:
   - component: {fileID: 1662441536}
   m_Layer: 0
   m_Name: AMMO Station_0 (1)
-  m_TagString: Untagged
+  m_TagString: Ammo Station Indiv.
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40210,7 +40210,7 @@ GameObject:
   - component: {fileID: 1946730576}
   m_Layer: 0
   m_Name: AMMO Station_0 (2)
-  m_TagString: Untagged
+  m_TagString: Ammo Station Indiv.
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46750,7 +46750,7 @@ GameObject:
   - component: {fileID: 2055274770}
   m_Layer: 0
   m_Name: AMMO Station_0 (4)
-  m_TagString: Untagged
+  m_TagString: Ammo Station Indiv.
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47298,7 +47298,7 @@ GameObject:
   - component: {fileID: 2081461735}
   m_Layer: 0
   m_Name: AMMO Station_0 (5)
-  m_TagString: Untagged
+  m_TagString: Ammo Station Indiv.
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
