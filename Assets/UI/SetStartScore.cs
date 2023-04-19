@@ -8,7 +8,7 @@ public class SetStartScore : MonoBehaviour
     // Start is called before the first frame update
     private GameObject scoreObject;
     [SerializeField]
-    private static int score = 500;
+    public static int score = 500;
 
     void Start()
     {
