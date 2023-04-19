@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,6 +17,8 @@ public class Shooting : MonoBehaviour
     public static int maxBulllets = 100;
     public static int currentAmountOfBullet;
     public Text bulletsLeftText;
+
+    
 
     void Start()
     {
@@ -42,7 +45,7 @@ public class Shooting : MonoBehaviour
         }
 
 
-        /*else if(Input.GetMouseButton(1))
+        /*else if(Input.GetMouseButton(0))
         {
             GameObject bullet = Instantiate(bulletPrefab,firePoint.transform.position,firePoint.transform.rotation);
             bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.transform.up * bulletSpeed, ForceMode2D.Impulse);
@@ -57,8 +60,7 @@ public class Shooting : MonoBehaviour
         bulletsLeftText.text = currentAmountOfBullet.ToString() + " / " + maxBulllets.ToString();
 
         GameObject bullet = Instantiate(bulletPrefab,firePoint.transform.position,firePoint.transform.rotation);
-        bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.transform.up * bulletSpeed, ForceMode2D.Impulse);
-       
+        bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.transform.up * bulletSpeed, ForceMode2D.Impulse); 
         Destroy(bullet, 0.3f);
     }
 

@@ -12,9 +12,11 @@ public class ZombieDies : MonoBehaviour
     private List<Material> originalMaterials = new List<Material>();
     public Material flashMaterial;
 
+    public static int countOfDeadZombies;
+
     void Start()
     {
-        maxHealth = Random.Range(1, 4);
+        maxHealth = Random.Range(1, 3);
         currentHealth = maxHealth;
 
         foreach (Transform child in transform)
@@ -48,8 +50,10 @@ public class ZombieDies : MonoBehaviour
 
     void Die()
     {
-  
+        countOfDeadZombies++;
+        ZombieSpawns.count--;
         Destroy(gameObject);
+        Debug.Log(countOfDeadZombies);
     }
 
     public void HitFlash()

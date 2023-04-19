@@ -300,7 +300,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faa70d09a250083419c7e21dd6d0d07c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreObject: {fileID: 0}
   bulletTag: Bullet
 --- !u!58 &2880113583557158170
 CircleCollider2D:

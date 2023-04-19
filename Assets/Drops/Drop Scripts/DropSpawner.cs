@@ -4,47 +4,62 @@ using UnityEngine;
 
 public class DropSpawner : MonoBehaviour
 {
-    public GameObject[] drops; // an array of the 4 drops to be randomly selected
-    public float dropInterval = 30f; // the interval in seconds between drops
+    [SerializeField] GameObject[] dropPrefab;
+    [SerializeField] float dropInterval = 45f;
+    [SerializeField] float minXTras;
+    [SerializeField] float maxXTras;
+    [SerializeField] float minYTras;
+    [SerializeField] float maxYTras;
 
-    private int lastDropIndex = -1; // the index of the last drop that was spawned
-    private bool isSpawning = false; // a flag indicating whether a drop is currently being spawned
+    int lastDropIndex = -1;
 
     void Start()
     {
-        StartCoroutine(SpawnDrops());
+        StartCoroutine(DropSpawn());
     }
 
-    IEnumerator SpawnDrops()
+    IEnumerator DropSpawn()
     {
+        yield return new WaitForSeconds(10f);
+        int dropIndex = Random.Range(0, dropPrefab.Length);
         while (true)
         {
-            if (!isSpawning)
+            while (dropIndex == lastDropIndex)
             {
-                isSpawning = true;
+                dropIndex = Random.Range(0, dropPrefab.Length);
+            }
+            lastDropIndex = dropIndex;
 
-                // Choose a random drop index that is not the same as the last one
-                int dropIndex = Random.Range(0, drops.Length);
-                while (dropIndex == lastDropIndex)
+            bool isPositionValid = false;
+            Vector2 position = Vector2.zero;
+            while (!isPositionValid)
+            {
+                position = GetRandomPosition();
+
+                Collider2D[] colliders = Physics2D.OverlapCircleAll(position, 1f);
+                isPositionValid = true;
+
+                foreach (Collider2D collider in colliders)
                 {
-                    dropIndex = Random.Range(0, drops.Length);
+                    if (collider.CompareTag("Crate") || collider.CompareTag("Ammo Station"))
+                    {
+                        isPositionValid = false;
+                        break;
+                    }
                 }
-                lastDropIndex = dropIndex;
-
-                // Choose a random position for the drop
-                Vector3 dropPosition = new Vector3(Random.Range(-10f, 10f), 0f, Random.Range(-10f, 10f));
-
-                // Spawn the drop at the chosen position
-                Instantiate(drops[dropIndex], dropPosition, Quaternion.identity);
-
-                yield return new WaitForSeconds(dropInterval);
-
-                isSpawning = false;
             }
-            else
-            {
-                yield return null;
-            }
+
+            GameObject gameObject = Instantiate(dropPrefab[dropIndex], position, Quaternion.identity);
+            Destroy(gameObject, 20f);
+
+            yield return new WaitForSeconds(dropInterval);
         }
+    }
+
+    private Vector2 GetRandomPosition()
+    {
+        float spawnXPosition = Random.Range(minXTras, maxXTras);
+        float spawnYPosition = Random.Range(minYTras, maxYTras);
+        return new Vector2(spawnXPosition, spawnYPosition);
     }
 }

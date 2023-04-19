@@ -4,25 +4,21 @@ using UnityEngine;
 
 public class Nuke : MonoBehaviour
 {
-    public float explosionRadius = 10f;
-    public float explosionForce = 100f;
-
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
-            Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
-            foreach (Collider collider in colliders)
+
+            GameObject[] zombies = GameObject.FindGameObjectsWithTag("Zombie");
+            foreach (GameObject zombie in zombies)
             {
-                Rigidbody rb = collider.GetComponent<Rigidbody>();
-                if (rb != null)
-                {
-                    rb.AddExplosionForce(explosionForce, transform.position, explosionRadius);
-                }
+                Destroy(zombie);
+                ZombieDies.countOfDeadZombies++;
             }
+
+            ZombieSpawns.count = 0;
             Destroy(gameObject);
+
         }
     }
 }
-
-
