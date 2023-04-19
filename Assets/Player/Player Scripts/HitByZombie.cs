@@ -9,7 +9,7 @@ public class HitByZombie : MonoBehaviour
     [SerializeField]
     private int maxHealth = 100;
     [SerializeField]
-    private static int currentHealth;
+    public static int currentHealth;
     [SerializeField]
     private GameObject healthObject;
 
