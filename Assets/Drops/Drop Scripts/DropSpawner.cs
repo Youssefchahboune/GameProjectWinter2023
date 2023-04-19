@@ -29,7 +29,7 @@ public class DropSpawner : MonoBehaviour
             }
             lastDropIndex = dropIndex;
 
-            var spawnXPosition = Random.Range(minXTras, minYTras);
+            var spawnXPosition = Random.Range(minXTras, maxXTras);
             var spawnYPosition = Random.Range(minYTras, maxYTras);
 
             var position = new Vector2(spawnXPosition, spawnYPosition);
