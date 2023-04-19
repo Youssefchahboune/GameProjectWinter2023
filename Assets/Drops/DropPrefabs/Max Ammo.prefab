@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7156360783378516684}
   - component: {fileID: 3166839097102600734}
   - component: {fileID: 4147624880004467874}
+  - component: {fileID: 1520892723853563023}
   m_Layer: 0
   m_Name: Max Ammo
   m_TagString: Untagged
@@ -114,7 +115,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -363,3 +364,15 @@ PolygonCollider2D:
       - {x: 0.7836964, y: -3.0022488}
       - {x: 1.0718201, y: -2.967674}
   m_UseDelaunayMesh: 0
+--- !u!114 &1520892723853563023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8070498688780373228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c327308a865ba439855b3cc28e620b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
