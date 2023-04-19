@@ -36,7 +36,6 @@ public class ZombieSpawns : MonoBehaviour
                 count++;
                 countOfZombiesSpawned++;
             }
-            Debug.Log(countOfZombiesSpawned);
            
         }
     }
