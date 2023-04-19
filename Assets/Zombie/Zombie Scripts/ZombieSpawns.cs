@@ -8,7 +8,8 @@ public class ZombieSpawns : MonoBehaviour
     private GameObject zombiePrefab;
 
     public static int count;
-  
+
+    public static int countOfZombiesSpawned;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,8 +34,10 @@ public class ZombieSpawns : MonoBehaviour
             {
                 Instantiate(zombiePrefab, spawner.transform.position, Quaternion.identity);
                 count++;
+                countOfZombiesSpawned++;
             }
-            Debug.Log(count);
+            Debug.Log(countOfZombiesSpawned);
+           
         }
     }
     }
