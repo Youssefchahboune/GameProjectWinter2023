@@ -48,8 +48,9 @@ public class ZombieDies : MonoBehaviour
 
     void Die()
     {
-  
+        ZombieSpawns.count--;
         Destroy(gameObject);
+        
     }
 
     public void HitFlash()

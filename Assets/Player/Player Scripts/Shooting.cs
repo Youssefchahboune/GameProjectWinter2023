@@ -58,8 +58,7 @@ public class Shooting : MonoBehaviour
         bulletsLeftText.text = currentAmountOfBullet.ToString() + " / " + maxBulllets.ToString();
 
         GameObject bullet = Instantiate(bulletPrefab,firePoint.transform.position,firePoint.transform.rotation);
-        bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.transform.up * bulletSpeed, ForceMode2D.Impulse);
-        
+        bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.transform.up * bulletSpeed, ForceMode2D.Impulse); 
         Destroy(bullet, 0.3f);
     }
 
