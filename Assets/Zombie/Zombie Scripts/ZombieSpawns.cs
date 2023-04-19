@@ -12,7 +12,7 @@ public class ZombieSpawns : MonoBehaviour
     {
        
         // Call SpawnZombies every 6 seconds
-        InvokeRepeating("SpawnZombies", 5f, 6f);
+        InvokeRepeating("SpawnZombies", 5f, 4.5f);
     }
 
     void SpawnZombies()
