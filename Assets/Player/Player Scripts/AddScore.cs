@@ -33,4 +33,9 @@ public class AddScore : MonoBehaviour
             scoreText.text = score + " pts";
         }
     }
+    public void AddPoints(int points)
+    {
+        score += points;
+        UpdateScoreText();
+    }
 }
