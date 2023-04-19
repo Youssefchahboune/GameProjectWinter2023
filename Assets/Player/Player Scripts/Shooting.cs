@@ -17,6 +17,7 @@ public class Shooting : MonoBehaviour
     public static int maxBulllets = 100;
     public static int currentAmountOfBullet;
     public Text bulletsLeftText;
+    public static int bulletsShot;
 
     
 
@@ -41,6 +42,7 @@ public class Shooting : MonoBehaviour
                 Invoke("setGunFireSctiveToFalse", 0.1f);
                 anim.SetBool("isShooting", true);
                 Invoke("setIsShootingToFalse", 0.1f);
+                
             }
         }
 
@@ -60,7 +62,9 @@ public class Shooting : MonoBehaviour
         bulletsLeftText.text = currentAmountOfBullet.ToString() + " / " + maxBulllets.ToString();
 
         GameObject bullet = Instantiate(bulletPrefab,firePoint.transform.position,firePoint.transform.rotation);
-        bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.transform.up * bulletSpeed, ForceMode2D.Impulse); 
+        bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.transform.up * bulletSpeed, ForceMode2D.Impulse);
+        bulletsShot++;
+        Debug.Log("Bullets shot: " + bulletsShot);
         Destroy(bullet, 0.3f);
     }
 
