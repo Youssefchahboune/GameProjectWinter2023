@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class HitByZombie : MonoBehaviour
 {
     [SerializeField]
-    private int maxHealth = 100;
+    public static int maxHealth = 100;
     [SerializeField]
     public static int currentHealth;
     [SerializeField]

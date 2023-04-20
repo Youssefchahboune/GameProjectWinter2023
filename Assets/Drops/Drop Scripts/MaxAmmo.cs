@@ -19,11 +19,10 @@ public class MaxAmmo : MonoBehaviour
                 else
                 {
                     // Add 250 points to score if player already has max bullets
-                    AddScore score = FindObjectOfType<AddScore>();
-                    if (score != null)
-                    {
-                        score.AddPoints(250);
-                    }
+                    
+                   
+                    SetStartScore.currentScore += 250;
+                   
                 }
             }
 

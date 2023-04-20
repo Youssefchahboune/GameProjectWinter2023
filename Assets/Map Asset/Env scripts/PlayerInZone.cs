@@ -19,16 +19,16 @@ public class PlayerInZone : MonoBehaviour
     {
         if (can.enabled == true)
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift) && AddScore.currentScore >= 100 && Shooting.currentAmountOfBullet != Shooting.maxBulllets)
+            if (Input.GetKeyDown(KeyCode.LeftShift) && SetStartScore.currentScore >= 100 && Shooting.currentAmountOfBullet != Shooting.maxBulllets)
             {
-                AddScore.currentScore -= 100;
+                SetStartScore.currentScore -= 100;
                 Shooting.currentAmountOfBullet = Shooting.maxBulllets;
                 
             }
 
-            if (Input.GetKeyDown(KeyCode.LeftShift) && AddScore.currentScore >= 50 && Shooting.currentAmountOfGrenade != Shooting.maxGrenades) {
+            if (Input.GetKeyDown(KeyCode.LeftShift) && SetStartScore.currentScore >= 50 && Shooting.currentAmountOfGrenade != Shooting.maxGrenades) {
 
-                AddScore.currentScore -= 50;
+                SetStartScore.currentScore -= 50;
                 Shooting.currentAmountOfGrenade = Shooting.maxGrenades;
             
             }

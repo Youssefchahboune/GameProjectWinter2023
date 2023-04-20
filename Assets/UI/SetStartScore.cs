@@ -6,21 +6,29 @@ using UnityEngine.UI;
 public class SetStartScore : MonoBehaviour
 {
     // Start is called before the first frame update
-    private GameObject scoreObject;
+    private Text scoreText;
     [SerializeField]
     public static int score = 500;
+    public static int currentScore;
 
     void Start()
     {
-        scoreObject = GameObject.Find("Score");
-        Text scoreText = scoreObject.GetComponent<Text>();
-        scoreText.text = score + " pts";
+        scoreText = GameObject.Find("Score").GetComponent<Text>();;
         
+        currentScore = score;
+
+        scoreText.text = currentScore.ToString() + " pts";
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        UpdateScoreText();
+    }
+
+    public void UpdateScoreText()
+    {
+        scoreText.text = currentScore.ToString() + " pts";
     }
 }

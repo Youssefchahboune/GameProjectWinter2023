@@ -5,19 +5,17 @@ using UnityEngine.UI;
 
 public class AddScore : MonoBehaviour
 {
-    private Text scoreText;
-    public static int currentScore;
+    private static Text scoreText;
     public string bulletTag = "Bullet";
 
     void Start()
     {
-        currentScore = SetStartScore.score;
         scoreText = GameObject.Find("Score").GetComponent<Text>();
     }
 
     private void Update()
     {
-        UpdateScoreText();
+
     }
 
 
@@ -25,21 +23,7 @@ public class AddScore : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(bulletTag))
         {
-            currentScore += 10;
+            SetStartScore.currentScore += 10;
         }
-    }
-
-    void UpdateScoreText()
-    {
-            scoreText.text = currentScore.ToString() + " pts";
-    }
-    public void AddPoints(int points)
-    {
-        currentScore += points;
-    }
-
-    public void buyWithPoints(int points)
-    {
-        currentScore -= points;
     }
 }

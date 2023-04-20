@@ -16,11 +16,9 @@ public class Nuke : MonoBehaviour
                 ZombieDies.countOfDeadZombies++;
                 Debug.Log(ZombieDies.countOfDeadZombies);
             }
-            AddScore score = FindObjectOfType<AddScore>();
-            if (score != null)
-            {
-                score.AddPoints(400);
-            }
+
+            SetStartScore.currentScore += 400;
+            
             ZombieSpawns.count = 0;
             Destroy(gameObject);
 
