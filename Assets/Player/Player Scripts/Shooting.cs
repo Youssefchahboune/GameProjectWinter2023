@@ -26,6 +26,8 @@ public class Shooting : MonoBehaviour
     public static Text grenadeLeftText;
 
     public static bool isRapidFireActive = false;
+    private float lastFireTime = 0f;
+    private float fireRate = 0.1f;
 
     void Start()
     {
@@ -100,10 +102,15 @@ public class Shooting : MonoBehaviour
 
     public void rapidShootBullet()
     {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.transform.position, firePoint.transform.rotation);
-        bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.transform.up * bulletSpeed, ForceMode2D.Impulse);
-        Destroy(bullet, 0.3f);
+        if (Time.time - lastFireTime > fireRate)
+        {
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.transform.position, firePoint.transform.rotation);
+            bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.transform.up * bulletSpeed, ForceMode2D.Impulse);
+            Destroy(bullet, 0.3f);
+            lastFireTime = Time.time;
+        }
     }
+
 
     public void setGunFireActiveToFalse()
     {
