@@ -13,7 +13,7 @@ public class ZombieSpawns : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("getAllSpawners", 5f, 5f);
+        InvokeRepeating("getAllSpawners", 5f, 4f);
        
     }
         
