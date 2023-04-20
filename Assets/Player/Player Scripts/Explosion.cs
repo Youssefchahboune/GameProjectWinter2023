@@ -17,7 +17,8 @@ public class Explosion : MonoBehaviour
             if (col.gameObject.CompareTag("Zombie"))
             {
                 Destroy(col.gameObject);
-                ZombieDies.countOfDeadZombies--;
+                ZombieDies.countOfDeadZombies++;
+                ZombieSpawns.countOfTotalZombies--;
                 SetStartScore.currentScore += 10;
             } else if (col.gameObject.CompareTag("Player"))
             {
