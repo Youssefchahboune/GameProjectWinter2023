@@ -26,8 +26,9 @@ public class PlayerInZone : MonoBehaviour
             {
                 SetStartScore.currentScore -= 100;
                 Shooting.currentAmountOfBullet = Shooting.maxBulllets;
-                scoreSpent += 100;  
-                
+                scoreSpent += 100;
+                Debug.Log("score spent: " + scoreSpent);
+
             }
 
             if (Input.GetKeyDown(KeyCode.LeftShift) && SetStartScore.currentScore >= 50 && Shooting.currentAmountOfGrenade != Shooting.maxGrenades) {
@@ -35,7 +36,8 @@ public class PlayerInZone : MonoBehaviour
                 SetStartScore.currentScore -= 50;
                 Shooting.currentAmountOfGrenade = Shooting.maxGrenades;
                 scoreSpent += 50;
-            
+                Debug.Log("score spent: " + scoreSpent);
+
             }
 
             if (Input.GetKeyDown(KeyCode.LeftShift) && SetStartScore.currentScore >= 50 && MedKitUse.currentAmountOfMedKit != MedKitUse.maxMedKit)
@@ -43,11 +45,12 @@ public class PlayerInZone : MonoBehaviour
 
                 SetStartScore.currentScore -= 50;
                 MedKitUse.currentAmountOfMedKit += 1;
-                scoreSpent+= 50;    
-                
+                scoreSpent+= 50;
+                Debug.Log("score spent: " + scoreSpent);
+
             }
         }
-        Debug.Log("score spent: " + scoreSpent);
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

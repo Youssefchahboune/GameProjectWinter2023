@@ -51,9 +51,10 @@ public class ZombieDies : MonoBehaviour
     void Die()
     {
         countOfDeadZombies++;
-        ZombieSpawns.count--;
+        ZombieSpawns.countOfTotalZombies--;
         Destroy(gameObject);
-        Debug.Log(countOfDeadZombies);
+        Debug.Log("Total amount of zombies dead: "+ countOfDeadZombies);
+        Debug.Log("Total amount of zombies: " + ZombieSpawns.countOfTotalZombies);
     }
 
     public void HitFlash()

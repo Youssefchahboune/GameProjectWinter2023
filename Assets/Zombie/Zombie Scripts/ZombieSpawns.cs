@@ -7,7 +7,7 @@ public class ZombieSpawns : MonoBehaviour
     [SerializeField]
     private GameObject zombiePrefab;
 
-    public static int count;
+    public static int countOfTotalZombies;
 
     public static int countOfZombiesSpawned;
     // Start is called before the first frame update
@@ -28,13 +28,14 @@ public class ZombieSpawns : MonoBehaviour
     {
         GameObject[] spawners = GameObject.FindGameObjectsWithTag("Spawner");
 
-        if (count < 20)
+        if (countOfTotalZombies < 20)
         {
             foreach (GameObject spawner in spawners)
             {
                 Instantiate(zombiePrefab, spawner.transform.position, Quaternion.identity);
-                count++;
+                countOfTotalZombies++;
                 countOfZombiesSpawned++;
+                Debug.Log("Zombies spawned: " + countOfZombiesSpawned);
             }
            
         }

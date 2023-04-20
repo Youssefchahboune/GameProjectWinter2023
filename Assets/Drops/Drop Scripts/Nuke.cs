@@ -19,7 +19,7 @@ public class Nuke : MonoBehaviour
 
             SetStartScore.currentScore += 400;
             
-            ZombieSpawns.count = 0;
+            ZombieSpawns.countOfTotalZombies = 0;
             Destroy(gameObject);
 
         }
