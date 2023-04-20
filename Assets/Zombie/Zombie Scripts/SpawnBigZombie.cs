@@ -9,29 +9,22 @@ public class SpawnBigZombie : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField]
     private GameObject bigZombiePrefab;
+
     [SerializeField]
-    private Boolean isSpawned50 = false;
-    private Boolean isSpawned100 = false;
+    private int targetNum;
 
     void Start()
     {
-        isSpawned50 = false; 
-        isSpawned100=false;
+        targetNum = 25;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (ZombieDies.countOfDeadZombies == 5 && isSpawned50==false)
-        {
-            isSpawned50= true;
-            Spawn();
-        }
+        if (ZombieDies.countOfDeadZombies == targetNum) {
 
-        else if (ZombieDies.countOfDeadZombies == 10 && isSpawned100 == false)
-        {
-            isSpawned100 = true;
             Spawn();
+            targetNum += 25;
         }
     }
 
