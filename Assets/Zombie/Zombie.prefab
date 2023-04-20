@@ -288,6 +288,7 @@ MonoBehaviour:
   currentHealth: 0
   bulletTag: Bullet
   flashMaterial: {fileID: 2100000, guid: 823de309bce70ab49afc18cff3222f37, type: 2}
+  bloodSplatter: {fileID: 1603994612541627554, guid: 01a430f507a7fe647bb8bd5f3f282843, type: 3}
 --- !u!114 &2942816063702530588
 MonoBehaviour:
   m_ObjectHideFlags: 0

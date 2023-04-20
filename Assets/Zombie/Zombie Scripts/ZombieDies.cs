@@ -14,6 +14,8 @@ public class ZombieDies : MonoBehaviour
 
     public static int countOfDeadZombies;
 
+    public GameObject bloodSplatter;
+
     void Start()
     {
         maxHealth = Random.Range(1, 3);
@@ -41,6 +43,8 @@ public class ZombieDies : MonoBehaviour
             currentHealth--;
             
             HitFlash();
+
+            Instantiate(bloodSplatter, collision.gameObject.transform.position, Quaternion.identity);
 
             if (currentHealth <= 0)
             {

@@ -25,6 +25,7 @@ public class Explosion : MonoBehaviour
             if (col.gameObject.CompareTag("Zombie"))
             {
                 Destroy(col.gameObject);
+               
                 ZombieDies.countOfDeadZombies++;
                 ZombieSpawns.countOfTotalZombies--;
                 SetStartScore.currentScore += 10;
@@ -38,6 +39,7 @@ public class Explosion : MonoBehaviour
                 NewBehaviourScript bigZombieScript = col.gameObject.GetComponent<NewBehaviourScript>();
                 bigZombieScript.currentHealth -= GrenadeDamage;
                 bigZombieScript.HitFlash();
+
             }
             
         }

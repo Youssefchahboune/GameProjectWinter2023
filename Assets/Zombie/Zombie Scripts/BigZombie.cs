@@ -15,6 +15,8 @@ public class NewBehaviourScript : MonoBehaviour
 
     public static int countOfBigDeadZombies;
 
+    public GameObject bloodParticle;
+
     void Start()
     {
         maxHealth = 12;
@@ -49,6 +51,8 @@ public class NewBehaviourScript : MonoBehaviour
             currentHealth--;
 
             HitFlash();
+
+            Instantiate(bloodParticle, collision.gameObject.transform.position, Quaternion.identity);
 
             if (currentHealth <= 0)
             {
