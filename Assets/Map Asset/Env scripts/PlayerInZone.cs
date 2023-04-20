@@ -32,6 +32,15 @@ public class PlayerInZone : MonoBehaviour
                 Shooting.currentAmountOfGrenade = Shooting.maxGrenades;
             
             }
+
+            if (Input.GetKeyDown(KeyCode.LeftShift) && SetStartScore.currentScore >= 50 && MedKitUse.currentAmountOfMedKit != MedKitUse.maxMedKit)
+            {
+
+                SetStartScore.currentScore -= 50;
+                MedKitUse.currentAmountOfMedKit += 1;
+                
+
+            }
         }
     }
 

@@ -7355,6 +7355,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &115061076
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 115061077}
+  m_Layer: 0
+  m_Name: WholeUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &115061077
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115061076}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 201945865}
+  - {fileID: 1869334596}
+  - {fileID: 1262751330}
+  - {fileID: 1515354543}
+  m_Father: {fileID: 1363725851}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &118592571
 GameObject:
   m_ObjectHideFlags: 0
@@ -9026,7 +9061,7 @@ Transform:
   - {fileID: 1416038404}
   - {fileID: 118592572}
   - {fileID: 332064946}
-  m_Father: {fileID: 1363725851}
+  m_Father: {fileID: 115061077}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &203995291
@@ -16281,8 +16316,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -962.25, y: -528.9}
-  m_SizeDelta: {x: 371.9617, y: 54.8423}
+  m_AnchoredPosition: {x: -962.25, y: -529.0321}
+  m_SizeDelta: {x: 371.9617, y: 75.2245}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &573652381
 MonoBehaviour:
@@ -16319,7 +16354,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Ammo (100pts)
 
-    Grenades (50pts)'
+    Grenades (50pts)
+
+    Med Kit (50pts)'
 --- !u!222 &573652382
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24743,8 +24780,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -973.26, y: -548.1}
-  m_SizeDelta: {x: 371.9617, y: 54.8423}
+  m_AnchoredPosition: {x: -973.1377, y: -548.17053}
+  m_SizeDelta: {x: 371.9617, y: 70.0831}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1029514801
 MonoBehaviour:
@@ -24781,7 +24818,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Ammo (100pts)
 
-    Grenades (50pts)'
+    Grenades (50pts)
+
+    Med Kit (50pts)'
 --- !u!222 &1029514802
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28613,7 +28652,7 @@ Transform:
   m_LocalScale: {x: 0.4589237, y: 0.4589237, z: 0.4589237}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1363725851}
+  m_Father: {fileID: 115061077}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1262751331
@@ -30042,10 +30081,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 201945865}
-  - {fileID: 1869334596}
-  - {fileID: 1262751330}
-  - {fileID: 1515354543}
+  - {fileID: 115061077}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -33390,7 +33426,7 @@ Transform:
   m_LocalScale: {x: 0.14627938, y: 0.14627938, z: 0.14627938}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1363725851}
+  m_Father: {fileID: 115061077}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1515354544
@@ -41313,8 +41349,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -946.73, y: -549.67}
-  m_SizeDelta: {x: 371.9617, y: 54.8423}
+  m_AnchoredPosition: {x: -946.73, y: -549.73584}
+  m_SizeDelta: {x: 371.9617, y: 73.7132}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1672138270
 MonoBehaviour:
@@ -41351,7 +41387,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Ammo (100pts)
 
-    Grenades (50pts)'
+    Grenades (50pts)
+
+    Med Kit (50pts)'
 --- !u!222 &1672138271
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -42506,6 +42544,7 @@ GameObject:
   - component: {fileID: 1765534087}
   - component: {fileID: 1765534088}
   - component: {fileID: 1765534089}
+  - component: {fileID: 1765534090}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -42588,6 +42627,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletTag: Bullet
+--- !u!114 &1765534090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765534084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02ba82194bf8a914cac24348e11735fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1363725850}
+  UISprites: {fileID: 115061076}
+  UICanvas: {fileID: 165561676}
 --- !u!1 &1765978508
 GameObject:
   m_ObjectHideFlags: 0
@@ -44125,7 +44179,7 @@ Transform:
   m_LocalScale: {x: 1.4362833, y: 1.4362833, z: 1.4362833}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1363725851}
+  m_Father: {fileID: 115061077}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1869334597
