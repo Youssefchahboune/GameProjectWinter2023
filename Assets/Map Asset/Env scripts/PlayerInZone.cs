@@ -22,10 +22,10 @@ public class PlayerInZone : MonoBehaviour
     {
         if (can.enabled == true)
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift) && SetStartScore.currentScore >= 100 && Shooting.currentAmountOfBullet != Shooting.maxBulllets)
+            if (Input.GetKeyDown(KeyCode.LeftShift) && SetStartScore.currentScore >= 100 && Shooting.currentAmountOfBullet != Shooting.maxBullets)
             {
                 SetStartScore.currentScore -= 100;
-                Shooting.currentAmountOfBullet = Shooting.maxBulllets;
+                Shooting.currentAmountOfBullet = Shooting.maxBullets;
                 scoreSpent += 100;
                 Debug.Log("score spent: " + scoreSpent);
 
@@ -49,6 +49,8 @@ public class PlayerInZone : MonoBehaviour
                 Debug.Log("score spent: " + scoreSpent);
 
             }
+            Shooting.updateBulletText();
+            Shooting.updateGrenadeText();
         }
         
     }
