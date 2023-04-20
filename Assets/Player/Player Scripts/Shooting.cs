@@ -24,7 +24,7 @@ public class Shooting : MonoBehaviour
     public static int currentAmountOfGrenade;
     public Text grenadeLeftText;
 
-
+    public static bool isRapidFireActive = false;
 
     void Start()
     {
@@ -44,27 +44,29 @@ public class Shooting : MonoBehaviour
         bulletsLeftText.text = currentAmountOfBullet.ToString() + " / " + maxBulllets.ToString();
         grenadeLeftText.text = "x " + currentAmountOfGrenade.ToString();
 
-        if (Input.GetMouseButtonDown(0))
+        if (!isRapidFireActive)
         {
-            if (currentAmountOfBullet > 0)
+            if (Input.GetMouseButtonDown(0))
             {
-                shootBullet();
-                gunFire.SetActive(true);
-                Invoke("setGunFireSctiveToFalse", 0.1f);
-                anim.SetBool("isShooting", true);
-                Invoke("setIsShootingToFalse", 0.1f);
-                
+                if (currentAmountOfBullet > 0)
+                {
+                    shootBullet();
+                    gunFire.SetActive(true);
+                    Invoke("setGunFireActiveToFalse", 0.1f);
+                    anim.SetBool("isShooting", true);
+                    Invoke("setIsShootingToFalse", 0.1f);
+
+                }
             }
         }
-
-
-        /*else if(Input.GetMouseButton(0))
+        else if (isRapidFireActive)
         {
-            GameObject bullet = Instantiate(bulletPrefab,firePoint.transform.position,firePoint.transform.rotation);
-            bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.transform.up * bulletSpeed, ForceMode2D.Impulse);
-            Destroy(bullet, 0.3f);
-
-        }*/
+            if (Input.GetMouseButton(0))
+            {
+                rapidShootBullet();
+                StartCoroutine(RapidFire(5f));
+            }
+        }
 
         if (Input.GetMouseButtonDown(1))
         {
@@ -74,7 +76,6 @@ public class Shooting : MonoBehaviour
                 currentAmountOfGrenade--;
                 grenadeLeftText.text = "x " + currentAmountOfGrenade.ToString();
             }
-            
         }
     }
 
@@ -90,7 +91,14 @@ public class Shooting : MonoBehaviour
         Destroy(bullet, 0.3f);
     }
 
-    public void setGunFireSctiveToFalse()
+    public void rapidShootBullet()
+    {
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.transform.position, firePoint.transform.rotation);
+        bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.transform.up * bulletSpeed, ForceMode2D.Impulse);
+        Destroy(bullet, 0.3f);
+    }
+
+    public void setGunFireActiveToFalse()
     {
         gunFire.SetActive(false);
     }
@@ -98,5 +106,11 @@ public class Shooting : MonoBehaviour
     public void setIsShootingToFalse()
     {
         anim.SetBool("isShooting", false);
+    }
+
+    IEnumerator RapidFire(float time)
+    {
+        yield return new WaitForSeconds(time);
+        isRapidFireActive = false;
     }
 }
