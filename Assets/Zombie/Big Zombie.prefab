@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 7909937611027756243}
   m_Layer: 0
   m_Name: Big Zombie
-  m_TagString: Zombie
+  m_TagString: BigZombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

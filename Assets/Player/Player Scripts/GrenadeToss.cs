@@ -38,7 +38,7 @@ public class GrenadeToss : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Zombie"))
+        if (collision.CompareTag("Zombie") || collision.gameObject.CompareTag("BigZombie"))
         {
             StartCoroutine(Explode(0));
         }

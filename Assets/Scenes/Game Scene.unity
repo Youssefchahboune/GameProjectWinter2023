@@ -42624,6 +42624,7 @@ GameObject:
   - component: {fileID: 1765534088}
   - component: {fileID: 1765534089}
   - component: {fileID: 1765534090}
+  - component: {fileID: 1765534091}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -42721,6 +42722,20 @@ MonoBehaviour:
   cam: {fileID: 1363725850}
   UISprites: {fileID: 115061076}
   UICanvas: {fileID: 165561676}
+--- !u!114 &1765534091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765534084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 700f584a3e52f3c48943b2c7a37c857e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bigZombiePrefab: {fileID: 1024912499742023367, guid: cbcdf6b61ffeaee4d9687b7eb073457a, type: 3}
+  targetNum: 0
 --- !u!1 &1765978508
 GameObject:
   m_ObjectHideFlags: 0

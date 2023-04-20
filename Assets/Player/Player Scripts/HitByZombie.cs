@@ -98,7 +98,7 @@ public class HitByZombie : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Zombie"))
+        if (collision.gameObject.CompareTag("Zombie") || collision.gameObject.CompareTag("BigZombie"))
         {
             zombieIsTouching = false;
         }
@@ -106,6 +106,7 @@ public class HitByZombie : MonoBehaviour
 
     public static void Die()
     {
+        ZombieDies.countOfDeadZombies= 0;
         ZombieSpawns.countOfTotalZombies = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

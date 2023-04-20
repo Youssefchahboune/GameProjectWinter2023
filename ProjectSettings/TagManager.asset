@@ -15,6 +15,7 @@ TagManager:
   - Station Canvas
   - station
   - Power Up
+  - BigZombie
   layers:
   - Default
   - TransparentFX

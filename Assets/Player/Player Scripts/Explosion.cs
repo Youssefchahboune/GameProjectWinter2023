@@ -7,7 +7,14 @@ public class Explosion : MonoBehaviour
     [SerializeField]
     private float radius = 1.5f;
 
+    [SerializeField]
+    private int grenadesHit;
+
     // Update is called once per frame
+    private void Start()
+    {
+        grenadesHit= 0;
+    }
     void Update()
     {
         Collider2D[] enemyHit = Physics2D.OverlapCircleAll(transform.position, radius);
@@ -20,7 +27,18 @@ public class Explosion : MonoBehaviour
                 ZombieDies.countOfDeadZombies++;
                 ZombieSpawns.countOfTotalZombies--;
                 SetStartScore.currentScore += 10;
-            } else if (col.gameObject.CompareTag("Player"))
+            } 
+            else if (col.gameObject.CompareTag("BigZombie"))
+            {
+                if (grenadesHit == 2)
+                {
+                    Destroy(col.gameObject);
+                    SetStartScore.currentScore += 10;
+                    grenadesHit= 0;
+                }
+                grenadesHit++;
+            }
+            else if (col.gameObject.CompareTag("Player"))
             {
                 HitByZombie.Die();
                 break;

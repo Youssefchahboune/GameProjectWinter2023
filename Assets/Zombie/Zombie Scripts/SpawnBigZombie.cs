@@ -15,7 +15,7 @@ public class SpawnBigZombie : MonoBehaviour
 
     void Start()
     {
-        targetNum = 25;
+        targetNum = 5;
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class SpawnBigZombie : MonoBehaviour
         if (ZombieDies.countOfDeadZombies == targetNum) {
 
             Spawn();
-            targetNum += 25;
+            targetNum += 5;
         }
     }
 
