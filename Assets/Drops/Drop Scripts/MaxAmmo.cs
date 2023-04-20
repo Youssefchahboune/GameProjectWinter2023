@@ -6,24 +6,20 @@ public class MaxAmmo : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Shooting shooting = collision.GetComponent<Shooting>();
 
-            if (shooting != null)
+            if (Shooting.currentAmountOfBullet < Shooting.maxBullets)
             {
-                if (Shooting.currentAmountOfBullet < Shooting.maxBulllets)
-                {
-                    int ammoToAdd = Shooting.maxBulllets - Shooting.currentAmountOfBullet;
-                    Shooting.currentAmountOfBullet += ammoToAdd;
-                    shooting.bulletsLeftText.text = Shooting.currentAmountOfBullet.ToString() + " / " + Shooting.maxBulllets.ToString();
-                }
-                else
-                {
-                    // Add 250 points to score if player already has max bullets
+                int ammoToAdd = Shooting.maxBullets - Shooting.currentAmountOfBullet;
+                Shooting.currentAmountOfBullet += ammoToAdd;
+                Shooting.updateBulletText();
+            }
+            else
+            {
+                // Add 250 points to score if player already has max bullets
                     
                    
-                    SetStartScore.currentScore += 250;
+                SetStartScore.currentScore += 250;
                    
-                }
             }
 
             Destroy(gameObject);

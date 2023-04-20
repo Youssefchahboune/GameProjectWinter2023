@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEditor;
@@ -15,34 +15,41 @@ public class Shooting : MonoBehaviour
     public Animator anim;
     public GameObject grenade;
 
-    public static int maxBulllets = 100;
+    public static int maxBullets = 100;
     public static int currentAmountOfBullet;
-    public Text bulletsLeftText;
+    public static Text bulletsLeftText;
     public static int bulletsShot;
+    public static Text infiniteBulletsText;
 
     public static int maxGrenades = 3;
     public static int currentAmountOfGrenade;
-    public Text grenadeLeftText;
+    public static Text grenadeLeftText;
 
     public static bool isRapidFireActive = false;
 
     void Start()
     {
-        currentAmountOfBullet = maxBulllets;
+        bulletsLeftText = GameObject.Find("BulletsLeft").GetComponent<Text>();
 
-        bulletsLeftText.text = currentAmountOfBullet.ToString() + " / " + maxBulllets.ToString();
+        grenadeLeftText = GameObject.Find("Grenades").GetComponent<Text>();
+
+        infiniteBulletsText = GameObject.Find("InfiniteBullets").GetComponent<Text>();
+
+        infiniteBulletsText.gameObject.SetActive(false);
+
+        currentAmountOfBullet = maxBullets;
+
+        updateBulletText();
 
         currentAmountOfGrenade = maxGrenades;
 
-        grenadeLeftText.text = "x " + currentAmountOfGrenade.ToString();
+        updateGrenadeText();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        bulletsLeftText.text = currentAmountOfBullet.ToString() + " / " + maxBulllets.ToString();
-        grenadeLeftText.text = "x " + currentAmountOfGrenade.ToString();
 
         if (!isRapidFireActive)
         {
@@ -61,10 +68,10 @@ public class Shooting : MonoBehaviour
         }
         else if (isRapidFireActive)
         {
+            StartCoroutine(RapidFire(5f));
             if (Input.GetMouseButton(0))
             {
                 rapidShootBullet();
-                StartCoroutine(RapidFire(5f));
             }
         }
 
@@ -74,7 +81,7 @@ public class Shooting : MonoBehaviour
             {
                 Instantiate(grenade,transform.position, Quaternion.identity);
                 currentAmountOfGrenade--;
-                grenadeLeftText.text = "x " + currentAmountOfGrenade.ToString();
+                updateGrenadeText();
             }
         }
     }
@@ -82,7 +89,7 @@ public class Shooting : MonoBehaviour
     public void shootBullet()
     {
         currentAmountOfBullet -= 1;
-        bulletsLeftText.text = currentAmountOfBullet.ToString() + " / " + maxBulllets.ToString();
+        updateBulletText();
 
         GameObject bullet = Instantiate(bulletPrefab,firePoint.transform.position,firePoint.transform.rotation);
         bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.transform.up * bulletSpeed, ForceMode2D.Impulse);
@@ -112,5 +119,17 @@ public class Shooting : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         isRapidFireActive = false;
+        infiniteBulletsText.gameObject.SetActive(false);
+        bulletsLeftText.gameObject.SetActive(true);
+    }
+
+    public static void updateBulletText()
+    {
+        bulletsLeftText.text = currentAmountOfBullet.ToString() + " / " + maxBullets.ToString();
+    }
+
+    public static void updateGrenadeText()
+    {
+        grenadeLeftText.text = "x " + currentAmountOfGrenade.ToString();
     }
 }
