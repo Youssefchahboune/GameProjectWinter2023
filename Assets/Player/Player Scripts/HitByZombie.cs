@@ -106,6 +106,7 @@ public class HitByZombie : MonoBehaviour
 
     public static void Die()
     {
+        Shooting.bulletsShot = 0;
         ZombieDies.countOfDeadZombies= 0;
         ZombieSpawns.countOfTotalZombies = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

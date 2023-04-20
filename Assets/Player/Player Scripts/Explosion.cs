@@ -8,12 +8,12 @@ public class Explosion : MonoBehaviour
     private float radius = 1.5f;
 
     [SerializeField]
-    private int grenadesHit;
+    private int grenadesHit =0;
 
     // Update is called once per frame
     private void Start()
     {
-        grenadesHit= 0;
+        
     }
     void Update()
     {
@@ -27,16 +27,19 @@ public class Explosion : MonoBehaviour
                 ZombieDies.countOfDeadZombies++;
                 ZombieSpawns.countOfTotalZombies--;
                 SetStartScore.currentScore += 10;
-            } 
+            }
             else if (col.gameObject.CompareTag("BigZombie"))
             {
-                if (grenadesHit == 2)
+                if (grenadesHit == 3)
                 {
                     Destroy(col.gameObject);
-                    SetStartScore.currentScore += 10;
-                    grenadesHit= 0;
+                    SetStartScore.currentScore += 50;
+                    grenadesHit = 0; // reset the counter
                 }
-                grenadesHit++;
+                else
+                {
+                    grenadesHit++;
+                }
             }
             else if (col.gameObject.CompareTag("Player"))
             {
