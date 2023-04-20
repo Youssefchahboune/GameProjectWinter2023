@@ -85,6 +85,7 @@ public class HitByZombie : MonoBehaviour
             HitFlash();
             MedKitUse.HealingEffect.SetActive(false);
             MedKitUse.mediInUseEffect.SetActive(false);
+ 
             if (currentHealth <= 0)
             {
                 currentHealth = 0;

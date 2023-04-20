@@ -36,11 +36,11 @@ public class MedKitUse : MonoBehaviour
 
             if(currentAmountOfMedKit > 0 && HitByZombie.currentHealth < 100)
             {
-                HitByZombie.currentHealth = HitByZombie.maxHealth;
+                
                 mediInUseEffect.SetActive(true);
                 HealingEffect.SetActive(true);
                 Invoke("setMedInUseEffectToFalse", 2f);
-                currentAmountOfMedKit--;
+                
             }
         
         }
@@ -53,7 +53,11 @@ public class MedKitUse : MonoBehaviour
 
     void setMedInUseEffectToFalse()
     {
-        mediInUseEffect.SetActive(false);
-        HealingEffect.SetActive(false);
+        
+            HitByZombie.currentHealth = HitByZombie.maxHealth;
+            currentAmountOfMedKit--;
+            mediInUseEffect.SetActive(false);
+            HealingEffect.SetActive(false);
+
     }
 }
