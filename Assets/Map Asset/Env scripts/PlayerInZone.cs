@@ -23,6 +23,14 @@ public class PlayerInZone : MonoBehaviour
             {
                 AddScore.score -= 100;
                 Shooting.currentAmountOfBullet = Shooting.maxBulllets;
+                
+            }
+
+            if (Input.GetKeyDown(KeyCode.LeftShift) && AddScore.score >= 50 && Shooting.currentAmountOfGrenade != Shooting.maxGrenades) {
+
+                AddScore.score -= 50;
+                Shooting.currentAmountOfGrenade = Shooting.maxGrenades;
+            
             }
         }
     }

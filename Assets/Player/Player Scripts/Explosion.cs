@@ -18,6 +18,7 @@ public class Explosion : MonoBehaviour
             {
                 Destroy(col.gameObject);
                 ZombieDies.countOfDeadZombies--;
+                AddScore.score += 10;
             } else if (col.gameObject.CompareTag("Player"))
             {
                 HitByZombie.Die();

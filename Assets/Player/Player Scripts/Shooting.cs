@@ -20,12 +20,21 @@ public class Shooting : MonoBehaviour
     public Text bulletsLeftText;
     public static int bulletsShot;
 
-    
+    public static int maxGrenades = 3;
+    public static int currentAmountOfGrenade;
+    public Text grenadeLeftText;
+
+
 
     void Start()
     {
         currentAmountOfBullet = maxBulllets;
+
         bulletsLeftText.text = currentAmountOfBullet.ToString() + " / " + maxBulllets.ToString();
+
+        currentAmountOfGrenade = maxGrenades;
+
+        grenadeLeftText.text = "x " + currentAmountOfGrenade.ToString();
     }
 
     // Update is called once per frame
@@ -33,6 +42,8 @@ public class Shooting : MonoBehaviour
     {
 
         bulletsLeftText.text = currentAmountOfBullet.ToString() + " / " + maxBulllets.ToString();
+        grenadeLeftText.text = "x " + currentAmountOfGrenade.ToString();
+
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -58,7 +69,13 @@ public class Shooting : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-            Instantiate(grenade,transform.position, Quaternion.identity);
+            if (currentAmountOfGrenade > 0)
+            {
+                Instantiate(grenade,transform.position, Quaternion.identity);
+                currentAmountOfGrenade--;
+                grenadeLeftText.text = "x " + currentAmountOfGrenade.ToString();
+            }
+            
         }
     }
 
