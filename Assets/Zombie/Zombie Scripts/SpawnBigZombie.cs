@@ -10,29 +10,36 @@ public class SpawnBigZombie : MonoBehaviour
     [SerializeField]
     private GameObject bigZombiePrefab;
 
-    [SerializeField]
-    private int targetNum;
+
+    public int LimitOfBZOnTheMap = 1;
+
+    public static int NumberOfBigZombieCurrentlyOnTheMap = 0;
 
     void Start()
     {
-        targetNum = 5;
+        InvokeRepeating("Spawn", 10f, 10f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (ZombieDies.countOfDeadZombies == targetNum) {
-
-            Spawn();
-            targetNum += 5;
-        }
+        
     }
 
     void Spawn()
     {
 
-        GameObject[] spawners = GameObject.FindGameObjectsWithTag("Spawner");
-        Instantiate(bigZombiePrefab, spawners[Random.Range(1, 5)].transform.position, Quaternion.identity);
+        if (NumberOfBigZombieCurrentlyOnTheMap == 0)
+        {
+            GameObject[] spawners = GameObject.FindGameObjectsWithTag("Spawner");
+
+            for(int i = 0; i < LimitOfBZOnTheMap ; i++) { 
+                Instantiate(bigZombiePrefab, spawners[Random.Range(1, 5)].transform.position, Quaternion.identity);
+                NumberOfBigZombieCurrentlyOnTheMap++;
+            }
+
+        }
+        
 
     }
 }

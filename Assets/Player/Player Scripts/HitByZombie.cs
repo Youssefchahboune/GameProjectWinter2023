@@ -90,10 +90,27 @@ public class HitByZombie : MonoBehaviour
 
                 Die();
             }
+
+            UpdateHealthText();
+
+        } else if (collision.gameObject.CompareTag("BigZombie"))
+        {
+            zombieIsTouching = true;
+            currentHealth -= 25;
+            HitFlash();
+
+            if (currentHealth <= 0)
+            {
+                currentHealth = 0;
+
+                Die();
+            }
             
             UpdateHealthText();
-            
+
         }
+
+        
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -106,6 +123,7 @@ public class HitByZombie : MonoBehaviour
 
     public static void Die()
     {
+        SpawnBigZombie.NumberOfBigZombieCurrentlyOnTheMap = 0;
         Shooting.bulletsShot = 0;
         ZombieDies.countOfDeadZombies= 0;
         ZombieSpawns.countOfTotalZombies = 0;

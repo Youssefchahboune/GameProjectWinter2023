@@ -51,10 +51,9 @@ public class NewBehaviourScript : MonoBehaviour
 
     void Die()
     {
-   
+        ZombieDies.countOfDeadZombies++;
+        SpawnBigZombie.NumberOfBigZombieCurrentlyOnTheMap--;
         Destroy(gameObject);
-        Debug.Log("Total amount of big zombies dead: " + countOfBigDeadZombies);
-        Debug.Log("Total amount of zombies: " + ZombieSpawns.countOfTotalZombies);
     }
 
     public void HitFlash()

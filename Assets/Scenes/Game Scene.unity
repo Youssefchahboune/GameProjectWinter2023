@@ -42735,7 +42735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bigZombiePrefab: {fileID: 1024912499742023367, guid: cbcdf6b61ffeaee4d9687b7eb073457a, type: 3}
-  targetNum: 0
+  LimitOfBZOnTheMap: 1
 --- !u!1 &1765978508
 GameObject:
   m_ObjectHideFlags: 0
