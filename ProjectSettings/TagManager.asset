@@ -16,6 +16,8 @@ TagManager:
   - station
   - Power Up
   - BigZombie
+  - Healing
+  - Healing effect
   layers:
   - Default
   - TransparentFX

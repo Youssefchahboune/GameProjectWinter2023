@@ -22,6 +22,6 @@ public class BloodSplatter : MonoBehaviour
     public void bloodSplatter()
     {
         bloodSplatterParticleEffect.Play();
-        Invoke("DestroyIt",2f);
+        Invoke("DestroyIt",1f);
     }
 }

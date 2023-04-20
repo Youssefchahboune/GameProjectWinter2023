@@ -83,7 +83,8 @@ public class HitByZombie : MonoBehaviour
             zombieIsTouching = true;
             currentHealth -= 10;
             HitFlash();
-            
+            MedKitUse.HealingEffect.SetActive(false);
+            MedKitUse.mediInUseEffect.SetActive(false);
             if (currentHealth <= 0)
             {
                 currentHealth = 0;
@@ -98,6 +99,8 @@ public class HitByZombie : MonoBehaviour
             zombieIsTouching = true;
             currentHealth -= 25;
             HitFlash();
+            MedKitUse.HealingEffect.SetActive(false);
+            MedKitUse.mediInUseEffect.SetActive(false);
 
             if (currentHealth <= 0)
             {
