@@ -7,9 +7,9 @@ using UnityEngine.UI;
 public class HitByZombie : MonoBehaviour
 {
     [SerializeField]
-    private int maxHealth = 100;
+    public static int maxHealth = 100;
     [SerializeField]
-    private static int currentHealth;
+    public static int currentHealth;
     [SerializeField]
     private GameObject healthObject;
 
@@ -42,6 +42,9 @@ public class HitByZombie : MonoBehaviour
 
     void Update()
     {
+
+        UpdateHealthText();
+
         if (zombieIsTouching)
         {
             timer -= Time.deltaTime;
@@ -101,7 +104,7 @@ public class HitByZombie : MonoBehaviour
         }
     }
 
-    void Die()
+    public static void Die()
     {
         ZombieSpawns.count = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -131,4 +134,9 @@ public class HitByZombie : MonoBehaviour
             childSpriteRenderers[i].material = originalMaterials[i];
         }
     }
+    public int GetCurrentHealth()
+    {
+        return currentHealth;
+    }
+
 }

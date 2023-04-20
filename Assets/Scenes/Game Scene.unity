@@ -7355,6 +7355,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &115061076
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 115061077}
+  m_Layer: 0
+  m_Name: WholeUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &115061077
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115061076}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 201945865}
+  - {fileID: 1869334596}
+  - {fileID: 1262751330}
+  - {fileID: 1515354543}
+  m_Father: {fileID: 1363725851}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &118592571
 GameObject:
   m_ObjectHideFlags: 0
@@ -7510,7 +7545,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: x 3
+  m_Text: x 0
 --- !u!222 &122073684
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9026,7 +9061,7 @@ Transform:
   - {fileID: 1416038404}
   - {fileID: 118592572}
   - {fileID: 332064946}
-  m_Father: {fileID: 1363725851}
+  m_Father: {fileID: 115061077}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &203995291
@@ -13572,7 +13607,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 36863564, guid: 559c3a8ab535a484f91f20aeb3a2e6f1, type: 3}
   m_Color: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
   m_FlipX: 0
@@ -15168,7 +15203,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 36863564, guid: 559c3a8ab535a484f91f20aeb3a2e6f1, type: 3}
   m_Color: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
   m_FlipX: 0
@@ -15413,6 +15448,37 @@ RectTransform:
   m_AnchoredPosition: {x: 960, y: 540}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &553364320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 553364321}
+  m_Layer: 0
+  m_Name: Dir
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &553364321
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553364320}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 31, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1402108799}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &553977270
 GameObject:
   m_ObjectHideFlags: 0
@@ -16250,8 +16316,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -962.25, y: -528.9}
-  m_SizeDelta: {x: 371.9617, y: 54.8423}
+  m_AnchoredPosition: {x: -962.25, y: -529.0321}
+  m_SizeDelta: {x: 371.9617, y: 75.2245}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &573652381
 MonoBehaviour:
@@ -16286,7 +16352,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Press Space To buy Ammo \n(100 pts)"
+  m_Text: 'Ammo (100pts)
+
+    Grenades (50pts)
+
+    Med Kit (50pts)'
 --- !u!222 &573652382
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18854,7 +18924,9 @@ MonoBehaviour:
   firePoint: {fileID: 1402108798}
   gunFire: {fileID: 625218160}
   anim: {fileID: 715723157}
+  grenade: {fileID: 5800455302643115615, guid: 3f0ae1d72d73311448559e280445915f, type: 3}
   bulletsLeftText: {fileID: 776002626}
+  grenadeLeftText: {fileID: 751141157}
 --- !u!50 &715723156
 Rigidbody2D:
   serializedVersion: 4
@@ -18915,7 +18987,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f13c07f88df0a74f910769aa322c594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
   healthObject: {fileID: 0}
   timer: 0.8
   flashMaterial: {fileID: 2100000, guid: bb1730b9f34d79b40bee09de39d36a7f, type: 2}
@@ -18963,14 +19034,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 715723149}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dd52df7ba5f21041aa10fc1d627f4a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 20d2d04b9a7cb714f9967e957f824310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grenadeSpeed: 30
-  grenadePrefab: {fileID: 7184066900013520252, guid: fe8f4463324c5b9469dae97f50a0b2b9, type: 3}
-  firePoint: {fileID: 1402108798}
-  grenadesLeftText: {fileID: 751141157}
-  explosionRadius: 5
+  medKitText: {fileID: 0}
 --- !u!1 &721079747
 GameObject:
   m_ObjectHideFlags: 0
@@ -19201,7 +19268,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &731434179
 Transform:
   m_ObjectHideFlags: 0
@@ -19928,7 +19995,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: x 3
+  m_Text: x 0
 --- !u!222 &751141158
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24713,8 +24780,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -973.26, y: -548.1}
-  m_SizeDelta: {x: 371.9617, y: 54.8423}
+  m_AnchoredPosition: {x: -973.1377, y: -548.17053}
+  m_SizeDelta: {x: 371.9617, y: 70.0831}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1029514801
 MonoBehaviour:
@@ -24749,7 +24816,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Press Space To buy Ammo \n(100 pts)"
+  m_Text: 'Ammo (100pts)
+
+    Grenades (50pts)
+
+    Med Kit (50pts)'
 --- !u!222 &1029514802
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28581,7 +28652,7 @@ Transform:
   m_LocalScale: {x: 0.4589237, y: 0.4589237, z: 0.4589237}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1363725851}
+  m_Father: {fileID: 115061077}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1262751331
@@ -30010,10 +30081,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 201945865}
-  - {fileID: 1869334596}
-  - {fileID: 1262751330}
-  - {fileID: 1515354543}
+  - {fileID: 115061077}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -30815,7 +30883,8 @@ Transform:
   m_LocalPosition: {x: 1.47, y: 12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 553364321}
   m_Father: {fileID: 715723153}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -33357,7 +33426,7 @@ Transform:
   m_LocalScale: {x: 0.14627938, y: 0.14627938, z: 0.14627938}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1363725851}
+  m_Father: {fileID: 115061077}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1515354544
@@ -41280,8 +41349,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -946.73, y: -549.67}
-  m_SizeDelta: {x: 371.9617, y: 54.8423}
+  m_AnchoredPosition: {x: -946.73, y: -549.73584}
+  m_SizeDelta: {x: 371.9617, y: 73.7132}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1672138270
 MonoBehaviour:
@@ -41316,7 +41385,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Press Space To buy Ammo \n(100 pts)"
+  m_Text: 'Ammo (100pts)
+
+    Grenades (50pts)
+
+    Med Kit (50pts)'
 --- !u!222 &1672138271
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -42470,6 +42543,8 @@ GameObject:
   - component: {fileID: 1765534085}
   - component: {fileID: 1765534087}
   - component: {fileID: 1765534088}
+  - component: {fileID: 1765534089}
+  - component: {fileID: 1765534090}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -42507,7 +42582,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1765534084}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.167682, y: 0.6266721, z: -0.16177773}
+  m_LocalPosition: {x: -35.49, y: -26.24, z: -0.16177773}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42539,6 +42614,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zombiePrefab: {fileID: 1104498230474799019, guid: 580d5e1002c33794e8b8de1cb32d86d0, type: 3}
+--- !u!114 &1765534089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765534084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa70d09a250083419c7e21dd6d0d07c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletTag: Bullet
+--- !u!114 &1765534090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765534084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02ba82194bf8a914cac24348e11735fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1363725850}
+  UISprites: {fileID: 115061076}
+  UICanvas: {fileID: 165561676}
 --- !u!1 &1765978508
 GameObject:
   m_ObjectHideFlags: 0
@@ -44076,7 +44179,7 @@ Transform:
   m_LocalScale: {x: 1.4362833, y: 1.4362833, z: 1.4362833}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1363725851}
+  m_Father: {fileID: 115061077}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1869334597

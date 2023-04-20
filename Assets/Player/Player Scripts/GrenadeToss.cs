@@ -1,60 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GrenadeToss : MonoBehaviour
 {
+    private Vector3 targetPos;
+    public float speed = 10f;
+    public GameObject explosion;
 
-    public float grenadeSpeed = 50f;
-    public GameObject grenadePrefab;
-    public GameObject firePoint;
-    public static int maxGrenades = 3;
-    public static int currentAmountOfGrenades;
-    public Text grenadesLeftText;
-    public float explosionRadius = 5.0f;
-    // Start is called before the first frame update
-
-    void Start()
+    private void Start()
     {
-        currentAmountOfGrenades = maxGrenades;
-        grenadesLeftText.text = "X " + currentAmountOfGrenades.ToString();
+        targetPos = GameObject.Find("Dir").transform.position;
     }
-    void Update()
+
+    private void Update()
     {
-        grenadesLeftText.text = "X " + currentAmountOfGrenades.ToString();
-        if (Input.GetMouseButtonDown(1))
+        if(speed > 0)
         {
-            if (currentAmountOfGrenades > 0)
-            {
-                ThrowGrenade();
-            }
+            speed -= Random.Range(.05f, .1f);
+            transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
+        } else if (speed < 0)
+        {
+            speed = 0;
+
+            StartCoroutine(Explode(1));
         }
     }
 
-    void ThrowGrenade()
+    IEnumerator Explode(float time)
     {
-        GameObject grenade = Instantiate(grenadePrefab, firePoint.transform.position, firePoint.transform.rotation);
-        Rigidbody2D rb = grenade.GetComponent<Rigidbody2D>();
-
-        rb.AddForce(firePoint.transform.up * grenadeSpeed, ForceMode2D.Impulse);
-        currentAmountOfGrenades--;
-        Explode();
-        Destroy(grenade, 2f);
+        yield return new WaitForSeconds(time);
+        Destroy(gameObject);
+        Instantiate(explosion,transform.position,Quaternion.identity);
     }
 
-    void Explode()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
-
-        foreach (Collider2D collider in colliders)
+        if (collision.CompareTag("Zombie"))
         {
-
-            if (collider.CompareTag("Zombie"))
-            {
-                Destroy(collider.gameObject,2f);
-                ZombieDies.countOfDeadZombies++;
-            }
+            StartCoroutine(Explode(0));
         }
     }
+
+
+
 }

@@ -14,8 +14,11 @@ public class Nuke : MonoBehaviour
             {
                 Destroy(zombie);
                 ZombieDies.countOfDeadZombies++;
+                Debug.Log(ZombieDies.countOfDeadZombies);
             }
 
+            SetStartScore.currentScore += 400;
+            
             ZombieSpawns.count = 0;
             Destroy(gameObject);
 

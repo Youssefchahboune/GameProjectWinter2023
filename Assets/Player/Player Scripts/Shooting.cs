@@ -13,17 +13,28 @@ public class Shooting : MonoBehaviour
     public GameObject firePoint;
     public GameObject gunFire;
     public Animator anim;
+    public GameObject grenade;
 
     public static int maxBulllets = 100;
     public static int currentAmountOfBullet;
     public Text bulletsLeftText;
+    public static int bulletsShot;
 
-    
+    public static int maxGrenades = 3;
+    public static int currentAmountOfGrenade;
+    public Text grenadeLeftText;
+
+
 
     void Start()
     {
         currentAmountOfBullet = maxBulllets;
+
         bulletsLeftText.text = currentAmountOfBullet.ToString() + " / " + maxBulllets.ToString();
+
+        currentAmountOfGrenade = maxGrenades;
+
+        grenadeLeftText.text = "x " + currentAmountOfGrenade.ToString();
     }
 
     // Update is called once per frame
@@ -31,6 +42,7 @@ public class Shooting : MonoBehaviour
     {
 
         bulletsLeftText.text = currentAmountOfBullet.ToString() + " / " + maxBulllets.ToString();
+        grenadeLeftText.text = "x " + currentAmountOfGrenade.ToString();
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -41,6 +53,7 @@ public class Shooting : MonoBehaviour
                 Invoke("setGunFireSctiveToFalse", 0.1f);
                 anim.SetBool("isShooting", true);
                 Invoke("setIsShootingToFalse", 0.1f);
+                
             }
         }
 
@@ -52,6 +65,17 @@ public class Shooting : MonoBehaviour
             Destroy(bullet, 0.3f);
 
         }*/
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (currentAmountOfGrenade > 0)
+            {
+                Instantiate(grenade,transform.position, Quaternion.identity);
+                currentAmountOfGrenade--;
+                grenadeLeftText.text = "x " + currentAmountOfGrenade.ToString();
+            }
+            
+        }
     }
 
     public void shootBullet()
@@ -60,7 +84,9 @@ public class Shooting : MonoBehaviour
         bulletsLeftText.text = currentAmountOfBullet.ToString() + " / " + maxBulllets.ToString();
 
         GameObject bullet = Instantiate(bulletPrefab,firePoint.transform.position,firePoint.transform.rotation);
-        bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.transform.up * bulletSpeed, ForceMode2D.Impulse); 
+        bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.transform.up * bulletSpeed, ForceMode2D.Impulse);
+        bulletsShot++;
+        Debug.Log("Bullets shot: " + bulletsShot);
         Destroy(bullet, 0.3f);
     }
 
