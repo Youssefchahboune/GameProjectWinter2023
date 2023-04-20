@@ -16317,7 +16317,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Press Space To buy Ammo \n(100 pts)"
+  m_Text: 'Ammo (100pts)
+
+    Grenades (50pts)'
 --- !u!222 &573652382
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18886,6 +18888,7 @@ MonoBehaviour:
   anim: {fileID: 715723157}
   grenade: {fileID: 5800455302643115615, guid: 3f0ae1d72d73311448559e280445915f, type: 3}
   bulletsLeftText: {fileID: 776002626}
+  grenadeLeftText: {fileID: 751141157}
 --- !u!50 &715723156
 Rigidbody2D:
   serializedVersion: 4
@@ -19215,7 +19218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &731434179
 Transform:
   m_ObjectHideFlags: 0
@@ -19942,7 +19945,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: x 3
+  m_Text: x 0
 --- !u!222 &751141158
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24763,7 +24766,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Press Space To buy Ammo \n(100 pts)"
+  m_Text: 'Ammo (100pts)
+
+    Grenades (50pts)'
 --- !u!222 &1029514802
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -41331,7 +41336,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Press Space To buy Ammo \n(100 pts)"
+  m_Text: 'Ammo (100pts)
+
+    Grenades (50pts)'
 --- !u!222 &1672138271
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -44,7 +44,6 @@ public class Shooting : MonoBehaviour
         bulletsLeftText.text = currentAmountOfBullet.ToString() + " / " + maxBulllets.ToString();
         grenadeLeftText.text = "x " + currentAmountOfGrenade.ToString();
 
-
         if (Input.GetMouseButtonDown(0))
         {
             if (currentAmountOfBullet > 0)
