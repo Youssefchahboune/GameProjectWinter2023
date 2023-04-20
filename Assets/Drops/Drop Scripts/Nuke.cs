@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Nuke : MonoBehaviour
 {
+    public GameObject explosion;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -12,6 +13,7 @@ public class Nuke : MonoBehaviour
             GameObject[] zombies = GameObject.FindGameObjectsWithTag("Zombie");
             foreach (GameObject zombie in zombies)
             {
+                Instantiate(explosion, zombie.transform.position, Quaternion.identity);
                 Destroy(zombie);
                 ZombieDies.countOfDeadZombies++;
                 Debug.Log(ZombieDies.countOfDeadZombies);
