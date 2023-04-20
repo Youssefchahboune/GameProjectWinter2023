@@ -5,7 +5,7 @@ using UnityEngine;
 public class NewBehaviourScript : MonoBehaviour
 {
     [SerializeField] private int maxHealth;
-    [SerializeField] private int currentHealth;
+    [SerializeField] public int currentHealth;
     [SerializeField] private string bulletTag = "Bullet";
 
     private List<SpriteRenderer> childSpriteRenderers = new List<SpriteRenderer>();
@@ -30,6 +30,14 @@ public class NewBehaviourScript : MonoBehaviour
             }
         }
 
+    }
+
+
+    private void Update()
+    {
+        if (currentHealth <= 0) {
+            Die();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

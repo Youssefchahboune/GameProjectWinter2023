@@ -40,11 +40,11 @@ public class PlayerInZone : MonoBehaviour
 
             }
 
-            if (Input.GetKeyDown(KeyCode.LeftShift) && SetStartScore.currentScore >= 50 && MedKitUse.currentAmountOfMedKit != MedKitUse.maxMedKit)
+            if (Input.GetKeyDown(KeyCode.LeftShift) && SetStartScore.currentScore >= 100 && MedKitUse.currentAmountOfMedKit != MedKitUse.maxMedKit)
             {
 
                 SetStartScore.currentScore -= 50;
-                MedKitUse.currentAmountOfMedKit += 1;
+                MedKitUse.currentAmountOfMedKit = MedKitUse.maxMedKit;
                 scoreSpent+= 50;
                 Debug.Log("score spent: " + scoreSpent);
 
