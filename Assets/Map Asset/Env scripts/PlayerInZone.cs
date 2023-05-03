@@ -22,10 +22,10 @@ public class PlayerInZone : MonoBehaviour
     {
         if (can.enabled == true)
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift) && SetStartScore.currentScore >= 100 && Shooting.currentAmountOfBullet != Shooting.maxBulllets)
+            if (Input.GetKeyDown(KeyCode.LeftShift) && SetStartScore.currentScore >= 100 && Shooting.currentAmountOfBullet != Shooting.maxBullets)
             {
                 SetStartScore.currentScore -= 100;
-                Shooting.currentAmountOfBullet = Shooting.maxBulllets;
+                Shooting.currentAmountOfBullet = Shooting.maxBullets;
                 scoreSpent += 100;
                 Debug.Log("score spent: " + scoreSpent);
 
@@ -40,15 +40,17 @@ public class PlayerInZone : MonoBehaviour
 
             }
 
-            if (Input.GetKeyDown(KeyCode.LeftShift) && SetStartScore.currentScore >= 50 && MedKitUse.currentAmountOfMedKit != MedKitUse.maxMedKit)
+            if (Input.GetKeyDown(KeyCode.LeftShift) && SetStartScore.currentScore >= 100 && MedKitUse.currentAmountOfMedKit != MedKitUse.maxMedKit)
             {
 
                 SetStartScore.currentScore -= 50;
-                MedKitUse.currentAmountOfMedKit += 1;
+                MedKitUse.currentAmountOfMedKit = MedKitUse.maxMedKit;
                 scoreSpent+= 50;
                 Debug.Log("score spent: " + scoreSpent);
 
             }
+            Shooting.updateBulletText();
+            Shooting.updateGrenadeText();
         }
         
     }

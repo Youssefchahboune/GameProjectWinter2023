@@ -14,8 +14,10 @@ TagManager:
   - Spawner
   - Station Canvas
   - station
-  - HealthBar
-  - Score
+  - Power Up
+  - BigZombie
+  - Healing
+  - Healing effect
   layers:
   - Default
   - TransparentFX
@@ -23,7 +25,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Text
+  - 
   - 
   - 
   - 
