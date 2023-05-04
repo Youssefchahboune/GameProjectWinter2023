@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -17,6 +18,12 @@ public class PauseMenu : MonoBehaviour
     public LookAtMouse lookAtMouseScript;
     public Shooting shootingScript;
 
+    public TMP_Text statsText;
+
+    public ZombieDies zombieDiesScript;
+    public SetStartScore scoreScript;
+ 
+
     void Start()
     {
         pauseMenuCanvas.enabled = false;
@@ -25,6 +32,10 @@ public class PauseMenu : MonoBehaviour
         optionsMenuCanvas.enabled = false;
         audioSource = Camera.main.GetComponent<AudioSource>();
         audioListener = Camera.main.GetComponent<AudioListener>();
+
+       // zombieDiesScript = FindObjectOfType<ZombieDies>();
+       // scoreScript = FindObjectOfType<SetStartScore>();
+
     }
 
     void Update()
@@ -61,6 +72,11 @@ public class PauseMenu : MonoBehaviour
                 shootingScript.enabled = false;
             }
         }
+
+        statsText.text =  ZombieDies.countOfDeadZombies.ToString();
+
+
+
     }
 
     public void ChangeVolume()
