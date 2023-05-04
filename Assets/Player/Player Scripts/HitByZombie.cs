@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,7 @@ public class HitByZombie : MonoBehaviour
 
     [SerializeField]
     Canvas gameOverCanvas; // a reference to the game over canvas
+
 
     private bool zombieIsTouching = false; // flag for whether the player is touching a zombie
     public float timer = 1f; // a timer used for decreasing the player's health at a set interval
@@ -41,6 +43,7 @@ public class HitByZombie : MonoBehaviour
         healthObject = GameObject.Find("Health");
         currentHealth = maxHealth;
         UpdateHealthText();
+
     }
 
     // runs every frame
@@ -101,6 +104,7 @@ public class HitByZombie : MonoBehaviour
 
                 // Player died
                 Die();
+                gameOverCanvas.enabled = true;
             }
 
             UpdateHealthText();
@@ -121,6 +125,8 @@ public class HitByZombie : MonoBehaviour
 
                 // Player died
                 Die();
+                gameOverCanvas.enabled = true;
+
             }
 
             UpdateHealthText();
@@ -138,7 +144,8 @@ public class HitByZombie : MonoBehaviour
 
     // This method resets various game-related variables and restarts the current scene when the player dies
     public static void Die()
-    {
+    { 
+        
         SpawnBigZombie.NumberOfBigZombieCurrentlyOnTheMap = 0;
         Shooting.bulletsShot = 0;
         ZombieDies.countOfDeadZombies = 0;

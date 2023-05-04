@@ -15729,7 +15729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthObject: {fileID: 0}
-  gameOverCanvas: {fileID: 0}
+  gameOverCanvas: {fileID: 1479309740}
   timer: 0.8
   flashMaterial: {fileID: 2100000, guid: bb1730b9f34d79b40bee09de39d36a7f, type: 2}
 --- !u!58 &715723159
@@ -42785,6 +42785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zombiePrefab: {fileID: 1104498230474799019, guid: 580d5e1002c33794e8b8de1cb32d86d0, type: 3}
+  gameOverCanvas: {fileID: 1479309740}
 --- !u!114 &1765534089
 MonoBehaviour:
   m_ObjectHideFlags: 0

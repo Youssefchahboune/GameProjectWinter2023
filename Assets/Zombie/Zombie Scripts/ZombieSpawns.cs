@@ -9,6 +9,10 @@ public class ZombieSpawns : MonoBehaviour
     public static int countOfTotalZombies; // Static variable to keep track of the total number of zombies spawned.
     public static int countOfZombiesSpawned; // Static variable to keep track of the number of zombies spawned in the current wave.
 
+    [SerializeField]
+    Canvas gameOverCanvas; // a reference to the game over canvas
+
+
     void Start()
     {
         // Repeatedly call getAllSpawners() every 5 seconds, starting after 5 seconds have passed.
@@ -20,14 +24,17 @@ public class ZombieSpawns : MonoBehaviour
         // Find all GameObjects with the "Spawner" tag.
         GameObject[] spawners = GameObject.FindGameObjectsWithTag("Spawner");
 
-        if (countOfTotalZombies < 20) // If the total number of zombies spawned is less than 20...
-        {
-            foreach (GameObject spawner in spawners) // ...for each spawner...
+        if (gameOverCanvas.enabled == false)
             {
-                Instantiate(zombiePrefab, spawner.transform.position, Quaternion.identity); // ...instantiate a zombie at the spawner's position.
-                countOfTotalZombies++; // Increase the total number of zombies spawned.
-                countOfZombiesSpawned++; // Increase the number of zombies spawned in the current wave.
-                Debug.Log("Zombies spawned: " + countOfZombiesSpawned); // Print the number of zombies spawned in the current wave.
+            if (countOfTotalZombies < 20) // If the total number of zombies spawned is less than 20...
+            {
+                foreach (GameObject spawner in spawners) // ...for each spawner...
+                {
+                    Instantiate(zombiePrefab, spawner.transform.position, Quaternion.identity); // ...instantiate a zombie at the spawner's position.
+                    countOfTotalZombies++; // Increase the total number of zombies spawned.
+                    countOfZombiesSpawned++; // Increase the number of zombies spawned in the current wave.
+                    Debug.Log("Zombies spawned: " + countOfZombiesSpawned); // Print the number of zombies spawned in the current wave.
+                }
             }
         }
     }

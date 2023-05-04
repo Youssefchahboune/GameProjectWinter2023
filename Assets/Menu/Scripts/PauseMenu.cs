@@ -144,11 +144,11 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitGame()
     {
-            Time.timeScale = 0;
-            pauseMenuCanvas.enabled = false;
-            optionsMenuCanvas.enabled = false;
-            quitMenuCanvas.enabled = false;
-            gameOverCanvas.enabled = true;
+        Time.timeScale = 1;
+        pauseMenuCanvas.enabled = false;
+        optionsMenuCanvas.enabled = false;
+        quitMenuCanvas.enabled = false;
+        gameOverCanvas.enabled = true;
     }
 
     public void CancelQuit()
