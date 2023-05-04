@@ -33,17 +33,20 @@ public class PauseMenu : MonoBehaviour
             {
                 quitMenuCanvas.enabled = false;
                 pauseMenuCanvas.enabled = true;
+                Time.timeScale = 0;
             }
             else if (pauseMenuCanvas.enabled == true)
             {
                 pauseMenuCanvas.enabled = false;
                 optionsMenuCanvas.enabled = false;
                 audioSource.Stop();
+                Time.timeScale = 1;
             }
             else
             {
                 pauseMenuCanvas.enabled = true;
                 audioSource.Play();
+                Time.timeScale = 0;
             }
         }
     }
@@ -70,6 +73,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuCanvas.enabled = false;
         quitMenuCanvas.enabled = false;
         optionsMenuCanvas.enabled = true;
+        Time.timeScale = 0;
     }
 
     public void MM_Resume()
@@ -77,12 +81,14 @@ public class PauseMenu : MonoBehaviour
         pauseMenuCanvas.enabled = false;
         optionsMenuCanvas.enabled = false;
         audioSource.Stop();
+        Time.timeScale = 1;
     }
 
     public void MM_Quit()
     {
         pauseMenuCanvas.enabled = false;
         quitMenuCanvas.enabled = true;
+        Time.timeScale = 0;
     }
 
     public void QuitGame()
@@ -104,5 +110,6 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuCanvas.enabled = true;
         quitMenuCanvas.enabled = false;
+        Time.timeScale = 0;
     }
 }
