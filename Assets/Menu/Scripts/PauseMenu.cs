@@ -14,6 +14,8 @@ public class PauseMenu : MonoBehaviour
     Toggle mute;
     public AudioSource audioSource;
     public AudioListener audioListener;
+    public LookAtMouse lookAtMouseScript;
+    public Shooting shootingScript;
 
     void Start()
     {
@@ -41,12 +43,18 @@ public class PauseMenu : MonoBehaviour
                 optionsMenuCanvas.enabled = false;
                 audioSource.Stop();
                 Time.timeScale = 1;
+                // disable scripts
+                lookAtMouseScript.enabled = true;
+                shootingScript.enabled = true;
             }
             else
             {
                 pauseMenuCanvas.enabled = true;
                 audioSource.Play();
                 Time.timeScale = 0;
+                // enable scripts
+                lookAtMouseScript.enabled = false;
+                shootingScript.enabled = false;
             }
         }
     }
@@ -82,6 +90,9 @@ public class PauseMenu : MonoBehaviour
         optionsMenuCanvas.enabled = false;
         audioSource.Stop();
         Time.timeScale = 1;
+        // disable scripts
+        lookAtMouseScript.enabled = true;
+        shootingScript.enabled = true;
     }
 
     public void MM_Quit()
