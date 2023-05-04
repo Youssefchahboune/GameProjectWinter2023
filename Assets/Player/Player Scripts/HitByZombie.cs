@@ -68,6 +68,8 @@ public class HitByZombie : MonoBehaviour
                 {
                     currentHealth = 0;
                     Die();
+                    gameOverCanvas.enabled = true;
+
                 }
 
                 UpdateHealthText();

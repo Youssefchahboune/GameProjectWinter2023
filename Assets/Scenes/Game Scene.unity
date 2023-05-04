@@ -470,6 +470,7 @@ GameObject:
   - component: {fileID: 21961911}
   - component: {fileID: 21961913}
   - component: {fileID: 21961912}
+  - component: {fileID: 21961914}
   m_Layer: 5
   m_Name: Player UserName
   m_TagString: Untagged
@@ -530,7 +531,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Player_1
+  m_Text: 
 --- !u!222 &21961913
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -539,6 +540,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21961910}
   m_CullTransparentMesh: 1
+--- !u!114 &21961914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21961910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fae85a5844e434387b7a8608f98b9fe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayText: {fileID: 0}
 --- !u!1 &23084407
 GameObject:
   m_ObjectHideFlags: 0
@@ -42716,6 +42730,7 @@ GameObject:
   - component: {fileID: 1765534091}
   - component: {fileID: 1765534092}
   - component: {fileID: 1765534093}
+  - component: {fileID: 1765534094}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -42873,6 +42888,19 @@ MonoBehaviour:
   bulletTag: Bullet
   flashMaterial: {fileID: 0}
   bloodSplatter: {fileID: 0}
+--- !u!114 &1765534094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765534084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fae85a5844e434387b7a8608f98b9fe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayText: {fileID: 21961912}
 --- !u!1 &1765978508
 GameObject:
   m_ObjectHideFlags: 0
