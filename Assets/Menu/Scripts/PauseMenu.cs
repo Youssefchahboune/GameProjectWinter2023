@@ -25,7 +25,7 @@ public class PauseMenu : MonoBehaviour
     public ZombieSpawns zombieSpawnScript;
     public Shooting shootingScript;
     public PlayerInZone shopScript;
-
+    public PlayerMove moveScript;
 
 
     void Start()
@@ -42,6 +42,7 @@ public class PauseMenu : MonoBehaviour
         zombieSpawnScript = FindObjectOfType<ZombieSpawns>();
         shootingScript = FindObjectOfType<Shooting>();
         shopScript = FindObjectOfType<PlayerInZone>();
+        moveScript = FindObjectOfType<PlayerMove>();
 
     }
 
@@ -63,6 +64,7 @@ public class PauseMenu : MonoBehaviour
                 Time.timeScale = 1;
                 lookAtMouseScript.enabled = true;
                 shootingScript.enabled = true;
+                moveScript.enabled = true;
             }
             else if (optionsMenuCanvas.enabled == true)
             {
@@ -77,6 +79,7 @@ public class PauseMenu : MonoBehaviour
                 Time.timeScale = 0;
                 lookAtMouseScript.enabled = false;
                 shootingScript.enabled = false;
+                moveScript.enabled = false;
             }
         }
 
@@ -113,6 +116,8 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0;
         lookAtMouseScript.enabled = false;
         shootingScript.enabled = false;
+        moveScript.enabled = false;
+
     }
     public void mm_Options()
     {
@@ -132,6 +137,8 @@ public class PauseMenu : MonoBehaviour
         // disable scripts
         lookAtMouseScript.enabled = true;
         shootingScript.enabled = true;
+        moveScript.enabled = true;
+
     }
 
     public void MM_Quit()

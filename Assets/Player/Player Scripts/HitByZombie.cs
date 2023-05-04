@@ -17,6 +17,10 @@ public class HitByZombie : MonoBehaviour
     [SerializeField]
     Canvas gameOverCanvas; // a reference to the game over canvas
 
+    public LookAtMouse lookAtMouseScript;
+    public Shooting shootingScript;
+    public PlayerMove moveScript;
+
 
     private bool zombieIsTouching = false; // flag for whether the player is touching a zombie
     public float timer = 1f; // a timer used for decreasing the player's health at a set interval
@@ -28,6 +32,10 @@ public class HitByZombie : MonoBehaviour
     // runs once when the script is first enabled
     void Start()
     {
+        shootingScript = FindObjectOfType<Shooting>();
+        lookAtMouseScript = FindObjectOfType<LookAtMouse>();
+        moveScript = FindObjectOfType<PlayerMove>();
+
         // find all sprite renderers on child objects and store them in a list
         foreach (Transform child in transform)
         {
@@ -69,6 +77,9 @@ public class HitByZombie : MonoBehaviour
                     currentHealth = 0;
                     Die();
                     gameOverCanvas.enabled = true;
+                    lookAtMouseScript.enabled = false;
+                    shootingScript.enabled = false;
+                    moveScript.enabled = false;
 
                 }
 
@@ -107,6 +118,10 @@ public class HitByZombie : MonoBehaviour
                 // Player died
                 Die();
                 gameOverCanvas.enabled = true;
+                lookAtMouseScript.enabled = false;
+                shootingScript.enabled = false;
+                moveScript.enabled = false;
+
             }
 
             UpdateHealthText();
@@ -127,7 +142,10 @@ public class HitByZombie : MonoBehaviour
 
                 // Player died
                 Die();
+                lookAtMouseScript.enabled = false;
+                shootingScript.enabled = false;
                 gameOverCanvas.enabled = true;
+                moveScript.enabled = false;
 
             }
 
@@ -152,6 +170,7 @@ public class HitByZombie : MonoBehaviour
         Shooting.bulletsShot = 0;
         ZombieDies.countOfDeadZombies = 0;
         ZombieSpawns.countOfTotalZombies = 0;
+
 
     }
 

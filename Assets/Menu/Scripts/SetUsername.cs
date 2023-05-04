@@ -7,6 +7,8 @@ public class SetUsername : MonoBehaviour
 
     void Start()
     {
+        displayText = FindObjectOfType<Text>();
+
         string userInput = PlayerPrefs.GetString("UserInput");
         displayText.text = userInput;
     }
