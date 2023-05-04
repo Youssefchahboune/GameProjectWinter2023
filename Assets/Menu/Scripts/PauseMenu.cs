@@ -33,8 +33,8 @@ public class PauseMenu : MonoBehaviour
         audioSource = Camera.main.GetComponent<AudioSource>();
         audioListener = Camera.main.GetComponent<AudioListener>();
 
-       // zombieDiesScript = FindObjectOfType<ZombieDies>();
-       // scoreScript = FindObjectOfType<SetStartScore>();
+        zombieDiesScript = FindObjectOfType<ZombieDies>();
+        scoreScript = FindObjectOfType<SetStartScore>();
 
     }
 
@@ -73,7 +73,7 @@ public class PauseMenu : MonoBehaviour
             }
         }
 
-        statsText.text =  ZombieDies.countOfDeadZombies.ToString();
+        statsText.text = SetStartScore.currentScore.ToString() + "\n" + ZombieDies.countOfDeadZombies.ToString();
 
 
 
