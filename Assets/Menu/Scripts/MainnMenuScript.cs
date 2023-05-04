@@ -56,7 +56,7 @@ public class MainMenuScript : MonoBehaviour
         else
         {
             PlayerPrefs.SetString("UserInput", userInput);
-            askTutorialCanvas.SetActive(false);
+            askTutorialCanvas.SetActive(true);
 
         }
     }
