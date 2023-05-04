@@ -13,6 +13,9 @@ public class HitByZombie : MonoBehaviour
     [SerializeField]
     private GameObject healthObject; // a reference to the health UI element
 
+    [SerializeField]
+    Canvas gameOverCanvas; // a reference to the game over canvas
+
     private bool zombieIsTouching = false; // flag for whether the player is touching a zombie
     public float timer = 1f; // a timer used for decreasing the player's health at a set interval
 
@@ -140,6 +143,7 @@ public class HitByZombie : MonoBehaviour
         Shooting.bulletsShot = 0;
         ZombieDies.countOfDeadZombies = 0;
         ZombieSpawns.countOfTotalZombies = 0;
+
     }
 
     // This method updates the health text in the game UI based on the current health value
