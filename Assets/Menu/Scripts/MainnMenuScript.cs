@@ -34,6 +34,7 @@ public class MainMenuScript : MonoBehaviour
         tutorial5.SetActive(false);
         tutorial6.SetActive(false);
 
+        GetComponent<AudioSource>().Play();
 
     }
 
