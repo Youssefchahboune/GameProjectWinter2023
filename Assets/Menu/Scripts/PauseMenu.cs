@@ -75,6 +75,15 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    public void MM_PauseMenu()
+    {
+        pauseMenuCanvas.enabled = true;
+        optionsMenuCanvas.enabled = false;
+        quitMenuCanvas.enabled = false;
+        Time.timeScale = 0;
+        lookAtMouseScript.enabled = false;
+        shootingScript.enabled = false;
+    }
     public void mm_Options()
     {
         pauseMenuCanvas.enabled = false;
@@ -105,19 +114,18 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        if (quitMenuCanvas.enabled == true)
-        {
+        
             pauseMenuCanvas.enabled = false;
             optionsMenuCanvas.enabled = false;
             quitMenuCanvas.enabled = false;
             gameOverCanvas.enabled = true;
             StartCoroutine(LoadMainMenu());
-        }
     }
 
     IEnumerator LoadMainMenu()
     {
-        yield return new WaitForSeconds(10);
+        Time.timeScale = 1;
+        yield return new WaitForSeconds(5);
         SceneManager.LoadScene("MainMenu");
     }
 
