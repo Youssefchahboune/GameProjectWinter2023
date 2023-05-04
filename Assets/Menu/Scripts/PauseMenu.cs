@@ -16,14 +16,15 @@ public class PauseMenu : MonoBehaviour
     public AudioSource audioSource;
     public AudioListener audioListener;
     public LookAtMouse lookAtMouseScript;
-    public Shooting shootingScript;
 
     public TMP_Text statsText;
 
     public ZombieDies zombieDiesScript;
     public SetStartScore scoreScript;
     public ZombieSpawns zombieSpawnScript;
- 
+    public Shooting shootingScript;
+
+
 
     void Start()
     {
@@ -37,6 +38,7 @@ public class PauseMenu : MonoBehaviour
         zombieDiesScript = FindObjectOfType<ZombieDies>();
         scoreScript = FindObjectOfType<SetStartScore>();
         zombieSpawnScript = FindObjectOfType<ZombieSpawns>();
+        shootingScript = FindObjectOfType<Shooting>();
 
     }
 
@@ -77,7 +79,10 @@ public class PauseMenu : MonoBehaviour
 
         statsText.text = SetStartScore.currentScore.ToString() + "\n"
             + ZombieDies.countOfDeadZombies.ToString() + "\n"
-            + ZombieSpawns.countOfZombiesSpawned.ToString() + "\n";
+            + ZombieSpawns.countOfZombiesSpawned.ToString() + "\n"
+            + Shooting.bulletsShot.ToString() + "\n"
+            ;
+
 
 
 
