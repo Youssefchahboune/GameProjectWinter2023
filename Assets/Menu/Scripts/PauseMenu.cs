@@ -18,6 +18,7 @@ public class PauseMenu : MonoBehaviour
     public LookAtMouse lookAtMouseScript;
 
     public TMP_Text statsText;
+    public TMP_Text gameOverStatsText;
 
     public ZombieDies zombieDiesScript;
     public SetStartScore scoreScript;
@@ -84,6 +85,12 @@ public class PauseMenu : MonoBehaviour
             + ZombieSpawns.countOfZombiesSpawned.ToString() + "\n"
             + Shooting.bulletsShot.ToString() + "\n"
             + PlayerInZone.scoreSpent.ToString();
+
+        gameOverStatsText.text = SetStartScore.currentScore.ToString() + "\n"
+            + ZombieDies.countOfDeadZombies.ToString() + "\n"
+            + ZombieSpawns.countOfZombiesSpawned.ToString() + "\n"
+            + Shooting.bulletsShot.ToString() + "\n"
+            + PlayerInZone.scoreSpent.ToString();
     }
 
     public void ChangeVolume()
@@ -142,14 +149,6 @@ public class PauseMenu : MonoBehaviour
             optionsMenuCanvas.enabled = false;
             quitMenuCanvas.enabled = false;
             gameOverCanvas.enabled = true;
-            StartCoroutine(LoadMainMenu());
-    }
-
-    IEnumerator LoadMainMenu()
-    {
-        Time.timeScale = 1;
-        yield return new WaitForSeconds(5);
-        SceneManager.LoadScene("MainMenu");
     }
 
     public void CancelQuit()
@@ -158,5 +157,16 @@ public class PauseMenu : MonoBehaviour
         quitMenuCanvas.enabled = false;
         optionsMenuCanvas.enabled = false;
         Time.timeScale = 0;
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+
     }
 }

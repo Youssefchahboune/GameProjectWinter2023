@@ -140,7 +140,6 @@ public class HitByZombie : MonoBehaviour
         Shooting.bulletsShot = 0;
         ZombieDies.countOfDeadZombies = 0;
         ZombieSpawns.countOfTotalZombies = 0;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     // This method updates the health text in the game UI based on the current health value
