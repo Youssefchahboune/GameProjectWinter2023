@@ -23,6 +23,7 @@ public class PauseMenu : MonoBehaviour
     public SetStartScore scoreScript;
     public ZombieSpawns zombieSpawnScript;
     public Shooting shootingScript;
+    public PlayerInZone shopScript;
 
 
 
@@ -39,6 +40,7 @@ public class PauseMenu : MonoBehaviour
         scoreScript = FindObjectOfType<SetStartScore>();
         zombieSpawnScript = FindObjectOfType<ZombieSpawns>();
         shootingScript = FindObjectOfType<Shooting>();
+        shopScript = FindObjectOfType<PlayerInZone>();
 
     }
 
@@ -81,11 +83,7 @@ public class PauseMenu : MonoBehaviour
             + ZombieDies.countOfDeadZombies.ToString() + "\n"
             + ZombieSpawns.countOfZombiesSpawned.ToString() + "\n"
             + Shooting.bulletsShot.ToString() + "\n"
-            ;
-
-
-
-
+            + PlayerInZone.scoreSpent.ToString();
     }
 
     public void ChangeVolume()
