@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField]
-    Canvas mainMenu, optionsMenu;
+    Canvas pauseMenuCanvas, quitMenuCanvas, gameOverCanvas, optionsMenuCanvas;
     [SerializeField]
     Slider volumeSlider;
     [SerializeField]
@@ -16,36 +17,37 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
-        mainMenu.enabled = false;
-        optionsMenu.enabled = false;
+        pauseMenuCanvas.enabled = false;
+        quitMenuCanvas.enabled = false;
+        gameOverCanvas.enabled = false;
+        optionsMenuCanvas.enabled = false;
         audioSource = Camera.main.GetComponent<AudioSource>();
         audioListener = Camera.main.GetComponent<AudioListener>();
-
     }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (optionsMenu.enabled == true)
+            if (quitMenuCanvas.enabled == true)
             {
-                mainMenu.enabled = true;
-                optionsMenu.enabled = false;
+                quitMenuCanvas.enabled = false;
+                pauseMenuCanvas.enabled = true;
             }
-            else if (mainMenu.enabled == true)
+            else if (pauseMenuCanvas.enabled == true)
             {
-                mainMenu.enabled = false;
-                optionsMenu.enabled = false;
+                pauseMenuCanvas.enabled = false;
+                optionsMenuCanvas.enabled = false;
                 audioSource.Stop();
             }
             else
             {
-                mainMenu.enabled = true;
-                optionsMenu.enabled = false;
+                pauseMenuCanvas.enabled = true;
                 audioSource.Play();
             }
-
         }
     }
+
     public void ChangeVolume()
     {
         if (mute.isOn)
@@ -60,24 +62,47 @@ public class PauseMenu : MonoBehaviour
 
     public void MM_MainMenu()
     {
-        mainMenu.enabled = true;
-        optionsMenu.enabled = false;
+        SceneManager.LoadScene("MainMenu");
     }
+
     public void mm_Options()
     {
-        mainMenu.enabled = false;
-        optionsMenu.enabled = true;
+        pauseMenuCanvas.enabled = false;
+        quitMenuCanvas.enabled = false;
+        optionsMenuCanvas.enabled = true;
     }
+
     public void MM_Resume()
     {
-        mainMenu.enabled = false;
-        optionsMenu.enabled = false;
+        pauseMenuCanvas.enabled = false;
+        optionsMenuCanvas.enabled = false;
         audioSource.Stop();
     }
+
     public void MM_Quit()
     {
-        Application.Quit();
+        pauseMenuCanvas.enabled = false;
+        quitMenuCanvas.enabled = true;
     }
 
+    public void QuitGame()
+    {
+        if (quitMenuCanvas.enabled == true)
+        {
+            gameOverCanvas.enabled = true;
+            StartCoroutine(LoadMainMenu());
+        }
+    }
 
+    IEnumerator LoadMainMenu()
+    {
+        yield return new WaitForSeconds(10);
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void CancelQuit()
+    {
+        pauseMenuCanvas.enabled = true;
+        quitMenuCanvas.enabled = false;
+    }
 }
