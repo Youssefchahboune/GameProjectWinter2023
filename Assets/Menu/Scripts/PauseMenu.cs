@@ -44,6 +44,8 @@ public class PauseMenu : MonoBehaviour
         shopScript = FindObjectOfType<PlayerInZone>();
         moveScript = FindObjectOfType<PlayerMove>();
 
+        volumeSlider.value = AudioListener.volume;
+
     }
 
     void Update()
