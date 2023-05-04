@@ -43,16 +43,20 @@ public class PauseMenu : MonoBehaviour
                 optionsMenuCanvas.enabled = false;
                 audioSource.Stop();
                 Time.timeScale = 1;
-                // disable scripts
                 lookAtMouseScript.enabled = true;
                 shootingScript.enabled = true;
+            }
+            else if (optionsMenuCanvas.enabled == true)
+            {
+                optionsMenuCanvas.enabled = false;
+                pauseMenuCanvas.enabled = true;
+                Time.timeScale = 0;
             }
             else
             {
                 pauseMenuCanvas.enabled = true;
                 audioSource.Play();
                 Time.timeScale = 0;
-                // enable scripts
                 lookAtMouseScript.enabled = false;
                 shootingScript.enabled = false;
             }
@@ -71,11 +75,6 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    public void MM_MainMenu()
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
-
     public void mm_Options()
     {
         pauseMenuCanvas.enabled = false;
@@ -88,6 +87,7 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuCanvas.enabled = false;
         optionsMenuCanvas.enabled = false;
+        quitMenuCanvas.enabled = false;
         audioSource.Stop();
         Time.timeScale = 1;
         // disable scripts
@@ -98,6 +98,7 @@ public class PauseMenu : MonoBehaviour
     public void MM_Quit()
     {
         pauseMenuCanvas.enabled = false;
+        optionsMenuCanvas.enabled = false;
         quitMenuCanvas.enabled = true;
         Time.timeScale = 0;
     }
@@ -106,6 +107,9 @@ public class PauseMenu : MonoBehaviour
     {
         if (quitMenuCanvas.enabled == true)
         {
+            pauseMenuCanvas.enabled = false;
+            optionsMenuCanvas.enabled = false;
+            quitMenuCanvas.enabled = false;
             gameOverCanvas.enabled = true;
             StartCoroutine(LoadMainMenu());
         }
@@ -121,6 +125,7 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuCanvas.enabled = true;
         quitMenuCanvas.enabled = false;
+        optionsMenuCanvas.enabled = false;
         Time.timeScale = 0;
     }
 }
