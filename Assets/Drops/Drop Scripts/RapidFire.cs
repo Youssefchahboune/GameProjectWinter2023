@@ -17,6 +17,7 @@ public class RapidFire : MonoBehaviour
             Shooting.isRapidFireActive = true;
             // Destroy the RapidFire power-up game object.
             Destroy(gameObject);
+
         }
     }
 }
