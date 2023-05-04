@@ -22,6 +22,7 @@ public class PauseMenu : MonoBehaviour
 
     public ZombieDies zombieDiesScript;
     public SetStartScore scoreScript;
+    public ZombieSpawns zombieSpawnScript;
  
 
     void Start()
@@ -35,6 +36,7 @@ public class PauseMenu : MonoBehaviour
 
         zombieDiesScript = FindObjectOfType<ZombieDies>();
         scoreScript = FindObjectOfType<SetStartScore>();
+        zombieSpawnScript = FindObjectOfType<ZombieSpawns>();
 
     }
 
@@ -73,7 +75,9 @@ public class PauseMenu : MonoBehaviour
             }
         }
 
-        statsText.text = SetStartScore.currentScore.ToString() + "\n" + ZombieDies.countOfDeadZombies.ToString();
+        statsText.text = SetStartScore.currentScore.ToString() + "\n"
+            + ZombieDies.countOfDeadZombies.ToString() + "\n"
+            + ZombieSpawns.countOfZombiesSpawned.ToString() + "\n";
 
 
 
