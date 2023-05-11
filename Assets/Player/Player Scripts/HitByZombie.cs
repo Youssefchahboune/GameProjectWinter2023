@@ -75,7 +75,7 @@ public class HitByZombie : MonoBehaviour
                 if (currentHealth <= 0)
                 {
                     currentHealth = 0;
-                    Die();
+                    //Die();
                     gameOverCanvas.enabled = true;
                     lookAtMouseScript.enabled = false;
                     shootingScript.enabled = false;
@@ -116,7 +116,7 @@ public class HitByZombie : MonoBehaviour
                 currentHealth = 0;
 
                 // Player died
-                Die();
+               // Die();
                 gameOverCanvas.enabled = true;
                 lookAtMouseScript.enabled = false;
                 shootingScript.enabled = false;
@@ -141,7 +141,7 @@ public class HitByZombie : MonoBehaviour
                 currentHealth = 0;
 
                 // Player died
-                Die();
+               // Die();
                 lookAtMouseScript.enabled = false;
                 shootingScript.enabled = false;
                 gameOverCanvas.enabled = true;
@@ -163,7 +163,7 @@ public class HitByZombie : MonoBehaviour
     }
 
     // This method resets various game-related variables and restarts the current scene when the player dies
-    public static void Die()
+   /* public static void Die()
     { 
         
         SpawnBigZombie.NumberOfBigZombieCurrentlyOnTheMap = 0;
@@ -172,7 +172,7 @@ public class HitByZombie : MonoBehaviour
         ZombieSpawns.countOfTotalZombies = 0;
 
 
-    }
+    }*/
 
     // This method updates the health text in the game UI based on the current health value
     void UpdateHealthText()

@@ -45,7 +45,7 @@ public class Explosion : MonoBehaviour
             else if (col.gameObject.CompareTag("Player"))
             {
                 // Kill the player
-                HitByZombie.Die();
+                HitByZombie.currentHealth = 0;
                 break;
             }
             // If the collider belongs to the BigZombie game object

@@ -153,7 +153,7 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        Time.timeScale = 1;
+        Time.timeScale = 0;
         pauseMenuCanvas.enabled = false;
         optionsMenuCanvas.enabled = false;
         quitMenuCanvas.enabled = false;
@@ -171,6 +171,12 @@ public class PauseMenu : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
+        SpawnBigZombie.NumberOfBigZombieCurrentlyOnTheMap = 0;
+        Shooting.bulletsShot = 0;
+        ZombieDies.countOfDeadZombies = 0;
+        ZombieSpawns.countOfTotalZombies = 0;
+        ZombieSpawns.countOfZombiesSpawned = 0;
     }
 
     public void MainMenu()
