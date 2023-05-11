@@ -32,9 +32,6 @@ public class SoundManager : MonoBehaviour
         {
             PlaySound(healthSound);
         }
-        
-    
-
 }
 
     private void PlaySound(AudioClip clip)
