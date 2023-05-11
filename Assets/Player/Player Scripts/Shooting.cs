@@ -59,6 +59,12 @@ public class Shooting : MonoBehaviour
     // The rate at which bullets are fired when in rapid fire mode.
     private float fireRate = 0.1f;
 
+    // The audio source component to play shooting sound.
+    private AudioSource audioSource;
+
+    // The AudioClip containing the bullet sound
+    public AudioClip shootSound;
+
     // Called when the game starts.
     void Start()
     {
@@ -75,6 +81,10 @@ public class Shooting : MonoBehaviour
         updateBulletText();
         currentAmountOfGrenade = maxGrenades;
         updateGrenadeText();
+
+        // Get the audio source component.
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.clip = shootSound;
     }
 
     // Update is called once per frame
@@ -143,6 +153,9 @@ public class Shooting : MonoBehaviour
         // Instantiate a bullet
         GameObject bullet = Instantiate(bulletPrefab, firePoint.transform.position, firePoint.transform.rotation);
 
+        //Play the shooting sound
+        audioSource.PlayOneShot(shootSound);
+
         // Add force to the bullet to make it move
         bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.transform.up * bulletSpeed, ForceMode2D.Impulse);
 
@@ -164,6 +177,9 @@ public class Shooting : MonoBehaviour
         {
             // Instantiate a bullet
             GameObject bullet = Instantiate(bulletPrefab, firePoint.transform.position, firePoint.transform.rotation);
+
+            // Play shooting sound
+            audioSource.PlayOneShot(shootSound);
 
             // Add force to the bullet to make it move
             bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.transform.up * bulletSpeed, ForceMode2D.Impulse);
