@@ -8,6 +8,9 @@ public class PlayerInZone : MonoBehaviour
     public Canvas can;
 
     public static int scoreSpent;
+    public AudioClip buySound;
+    private AudioSource audioSource;
+
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +18,11 @@ public class PlayerInZone : MonoBehaviour
         can = GameObject.FindGameObjectWithTag("Station Canvas").GetComponent<Canvas>();
         can.enabled = false;
         scoreSpent = 0;
+
+        // Get the AudioSource component.
+        audioSource = GetComponent<AudioSource>();
+        // Set the AudioClip for the AudioSource.
+        audioSource.clip = buySound;
     }
 
     // Update is called once per frame
@@ -24,6 +32,7 @@ public class PlayerInZone : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.LeftShift) && SetStartScore.currentScore >= 100 && Shooting.currentAmountOfBullet != Shooting.maxBullets)
             {
+                audioSource.Play();
                 SetStartScore.currentScore -= 100;
                 Shooting.currentAmountOfBullet = Shooting.maxBullets;
                 scoreSpent += 100;
@@ -33,6 +42,7 @@ public class PlayerInZone : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.LeftShift) && SetStartScore.currentScore >= 50 && Shooting.currentAmountOfGrenade != Shooting.maxGrenades) {
 
+                audioSource.Play();
                 SetStartScore.currentScore -= 50;
                 Shooting.currentAmountOfGrenade = Shooting.maxGrenades;
                 scoreSpent += 50;
@@ -43,6 +53,7 @@ public class PlayerInZone : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.LeftShift) && SetStartScore.currentScore >= 100 && MedKitUse.currentAmountOfMedKit != MedKitUse.maxMedKit)
             {
 
+                audioSource.Play();
                 SetStartScore.currentScore -= 50;
                 MedKitUse.currentAmountOfMedKit = MedKitUse.maxMedKit;
                 scoreSpent+= 50;

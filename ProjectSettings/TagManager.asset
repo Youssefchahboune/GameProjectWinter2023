@@ -18,6 +18,9 @@ TagManager:
   - BigZombie
   - Healing
   - Healing effect
+  - maxammo
+  - medkit
+  - nuke
   layers:
   - Default
   - TransparentFX
