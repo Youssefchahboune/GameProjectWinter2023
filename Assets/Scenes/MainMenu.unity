@@ -7080,7 +7080,7 @@ AudioSource:
   m_GameObject: {fileID: 1515678986}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -7361286865229970883, guid: 8c817dd1b84de4e3f8d1d397951ba463, type: 2}
   m_audioClip: {fileID: 8300000, guid: 664f8b1cfe06f43dc9f738cefc20faa0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -8628,7 +8628,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1816361234}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1515678987}
+        m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
+        m_MethodName: SaveInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1816361234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9454,7 +9466,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1515678987}
         m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
-        m_MethodName: SaveInput
+        m_MethodName: CancelInput
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9720,7 +9732,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2100432074}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1515678987}
+        m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2100432074
 MonoBehaviour:
   m_ObjectHideFlags: 0

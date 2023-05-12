@@ -134,7 +134,6 @@ public class PauseMenu : MonoBehaviour
         quitMenuCanvas.enabled = false;
         audioSource.Stop();
         Time.timeScale = 1;
-        // disable scripts
         lookAtMouseScript.enabled = true;
         shootingScript.enabled = true;
         moveScript.enabled = true;
@@ -153,7 +152,10 @@ public class PauseMenu : MonoBehaviour
     public void QuitGame()
     {
         PlayMenuClickSound();
-        Time.timeScale = 0;
+        Time.timeScale = 1;
+        lookAtMouseScript.enabled = false;
+        shootingScript.enabled = false;
+        moveScript.enabled = false;
         pauseMenuCanvas.enabled = false;
         optionsMenuCanvas.enabled = false;
         quitMenuCanvas.enabled = false;
