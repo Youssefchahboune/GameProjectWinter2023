@@ -16,7 +16,7 @@ public class InGameMusic : MonoBehaviour
     private bool isPauseMusicPlaying = false;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         gameMusic.clip = mainMusicClip;
         gameMusic.Play();
@@ -47,17 +47,21 @@ public class InGameMusic : MonoBehaviour
 
             if (!gameMusic.isPlaying)
             {
+                gameMusic.Stop();
+                gameMusic.clip = mainMusicClip;
                 gameMusic.Play();
             }
 
             if (Shooting.isRapidFireActive && !isMinigunMusicPlaying)
             {
+                gameMusic.Stop();
                 gameMusic.clip = minigunMusicClip;
                 gameMusic.Play();
                 isMinigunMusicPlaying = true;
             }
             else if (!Shooting.isRapidFireActive && isMinigunMusicPlaying)
             {
+                gameMusic.Stop();
                 gameMusic.clip = mainMusicClip;
                 gameMusic.Play();
                 isMinigunMusicPlaying = false;
