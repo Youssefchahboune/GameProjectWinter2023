@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class MedKitUse : MonoBehaviour
 {
-
     // static variables for the maximum and current amount of medkits
     public static int maxMedKit = 3;
     public static int currentAmountOfMedKit;
@@ -19,6 +18,11 @@ public class MedKitUse : MonoBehaviour
     // reference to the game object representing the healing effect
     public static GameObject HealingEffect;
 
+    // Reference to the AudioSource component
+    public AudioSource audioSource;
+
+    // Sound clip for the regen sound
+    public AudioClip regenSoundClip;
 
     // Start is called before the first frame update
     void Start()
@@ -39,12 +43,14 @@ public class MedKitUse : MonoBehaviour
         // deactivate the medkit in use and the healing effect game objects
         mediInUseEffect.SetActive(false);
         HealingEffect.SetActive(false);
+
+        // Get the AudioSource component attached to this game object
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
         // update the medkit count UI text
         UpdateMedkitText();
 
@@ -53,12 +59,15 @@ public class MedKitUse : MonoBehaviour
         {
             if (currentAmountOfMedKit > 0 && HitByZombie.currentHealth < 100)
             {
+                // Play the regen sound clip
+                audioSource.PlayOneShot(regenSoundClip);
+
                 // activate the medkit in use and the healing effect game objects
                 mediInUseEffect.SetActive(true);
                 HealingEffect.SetActive(true);
 
                 // invoke a method to deactivate the medkit in use and the healing effect game objects after 2 seconds
-                Invoke("setMedInUseEffectToFalse", 2f);
+                Invoke("SetMedInUseEffectToFalse", 2f);
             }
         }
     }
@@ -70,7 +79,7 @@ public class MedKitUse : MonoBehaviour
     }
 
     // deactivates the medkit in use and the healing effect game objects and applies the medkit's healing effect to the player
-    void setMedInUseEffectToFalse()
+    void SetMedInUseEffectToFalse()
     {
         // set the player's current health to the maximum health
         HitByZombie.currentHealth = HitByZombie.maxHealth;

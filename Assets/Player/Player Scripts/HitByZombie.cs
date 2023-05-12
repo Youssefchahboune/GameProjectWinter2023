@@ -21,6 +21,11 @@ public class HitByZombie : MonoBehaviour
     public Shooting shootingScript;
     public PlayerMove moveScript;
 
+    // Reference to the AudioSource component
+    public AudioSource audioSource;
+
+    // Sound clip for the regen sound
+    public AudioClip zombieHitClip;
 
     private bool zombieIsTouching = false; // flag for whether the player is touching a zombie
     public float timer = 1f; // a timer used for decreasing the player's health at a set interval
@@ -35,6 +40,8 @@ public class HitByZombie : MonoBehaviour
         shootingScript = FindObjectOfType<Shooting>();
         lookAtMouseScript = FindObjectOfType<LookAtMouse>();
         moveScript = FindObjectOfType<PlayerMove>();
+        // Get the AudioSource component attached to this game object
+        audioSource = GetComponent<AudioSource>();
 
         // find all sprite renderers on child objects and store them in a list
         foreach (Transform child in transform)
@@ -67,7 +74,6 @@ public class HitByZombie : MonoBehaviour
             {
                 timer = 1f;
                 currentHealth -= 10;
-
                 // flash the player sprite to indicate damage taken
                 HitFlash();
 
@@ -90,14 +96,18 @@ public class HitByZombie : MonoBehaviour
 
     public void HitFlash()
     {
-        // Change the material of all child SpriteRenderers to the flashMaterial
-        foreach (SpriteRenderer spriteRenderer in childSpriteRenderers)
+        if (currentHealth > 0)
         {
-            spriteRenderer.material = flashMaterial;
-        }
+            // Change the material of all child SpriteRenderers to the flashMaterial
+            foreach (SpriteRenderer spriteRenderer in childSpriteRenderers)
+            {
+                audioSource.PlayOneShot(zombieHitClip);
+                spriteRenderer.material = flashMaterial;
+            }
 
-        // Schedule the material of all child SpriteRenderers to be reverted to their original material after 0.1 seconds
-        Invoke("setPlayerMaterialToOriginal", 0.1f);
+            // Schedule the material of all child SpriteRenderers to be reverted to their original material after 0.1 seconds
+            Invoke("setPlayerMaterialToOriginal", 0.1f);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -116,7 +126,6 @@ public class HitByZombie : MonoBehaviour
                 currentHealth = 0;
 
                 // Player died
-               // Die();
                 gameOverCanvas.enabled = true;
                 lookAtMouseScript.enabled = false;
                 shootingScript.enabled = false;
@@ -141,7 +150,6 @@ public class HitByZombie : MonoBehaviour
                 currentHealth = 0;
 
                 // Player died
-               // Die();
                 lookAtMouseScript.enabled = false;
                 shootingScript.enabled = false;
                 gameOverCanvas.enabled = true;
@@ -161,18 +169,6 @@ public class HitByZombie : MonoBehaviour
             zombieIsTouching = false;
         }
     }
-
-    // This method resets various game-related variables and restarts the current scene when the player dies
-   /* public static void Die()
-    { 
-        
-        SpawnBigZombie.NumberOfBigZombieCurrentlyOnTheMap = 0;
-        Shooting.bulletsShot = 0;
-        ZombieDies.countOfDeadZombies = 0;
-        ZombieSpawns.countOfTotalZombies = 0;
-
-
-    }*/
 
     // This method updates the health text in the game UI based on the current health value
     void UpdateHealthText()
