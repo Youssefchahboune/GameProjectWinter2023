@@ -13,15 +13,25 @@ public class Explosion : MonoBehaviour
     // Set the amount of damage the grenade will inflict on the enemy as 4
     public int GrenadeDamage = 4;
 
+    // Reference to the AudioSource component
+    public AudioSource audioSource;
+
+    // Sound clip for the frag sound
+    public AudioClip fragSoundClip;
+
     // When the object is created, call the ZoneDamage function
     private void Start()
     {
         ZoneDamage();
+        // Get the AudioSource component attached to this game object
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     // Function to calculate damage in a circular area of radius "radius"
     public void ZoneDamage()
     {
+
         // Find all the colliders inside the circular area and store them in "enemyHit" list
         Collider2D[] enemyHit = Physics2D.OverlapCircleAll(transform.position, radius);
 
@@ -62,6 +72,7 @@ public class Explosion : MonoBehaviour
             }
 
         }
+        audioSource.PlayOneShot(fragSoundClip);
     }
 
     // Function to destroy the object

@@ -10,9 +10,11 @@ public class GrenadeToss : MonoBehaviour
     public float speed = 10f;  // The speed at which the grenade moves
     public GameObject explosion;  // The explosion object to instantiate when the grenade detonates
 
+    
     private void Start()
     {
         targetPos = GameObject.Find("Dir").transform.position;  // Get the position of the target
+        
     }
 
     private void Update()

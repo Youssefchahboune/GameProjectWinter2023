@@ -20,9 +20,18 @@ public class NewBehaviourScript : MonoBehaviour
     // The particle effect game object for blood when the zombie gets hit.
     public GameObject bloodParticle;
 
+    // Reference to the AudioSource component
+    public AudioSource audioSource;
+
+    // Sound clip for the big zombie death sound
+    public AudioClip bigZombieSoundClip;
+
     // This method is called at the start of the game.
     void Start()
     {
+        // Get the AudioSource component attached to this game object
+        audioSource = GetComponent<AudioSource>();
+
         maxHealth = 12; // Assigning the maximum health value.
         currentHealth = maxHealth; // Assigning the current health value to the maximum health value.
 
@@ -73,6 +82,7 @@ public class NewBehaviourScript : MonoBehaviour
     // This method is called when the zombie dies.
     void Die()
     {
+        audioSource.PlayOneShot(bigZombieSoundClip);
         // Increment the count of dead zombies.
         ZombieDies.countOfDeadZombies++;
 
