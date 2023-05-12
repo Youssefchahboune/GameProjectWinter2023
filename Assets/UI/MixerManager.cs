@@ -17,6 +17,9 @@ public class MixerManager : MonoBehaviour
     [SerializeField]
     private AudioMixerGroup soundFXMixerGroup;
 
+    private const string MusicMuteKey = "MusicMute";
+    private const string SoundFXMuteKey = "SoundFXMute";
+
     private bool musicIsOn;
     private bool soundFXIsOn;
 
@@ -26,6 +29,27 @@ public class MixerManager : MonoBehaviour
         soundFXIsOn = false;
     }
 
+    private void Start()
+    {
+        // Retrieve the mute state from PlayerPrefs and set the toggle accordingly
+        bool isMusicMuted = PlayerPrefs.GetInt(MusicMuteKey, 0) == 1;
+        bool isSoundFXMuted = PlayerPrefs.GetInt(SoundFXMuteKey, 0) == 1;
+        musicMute.isOn = isMusicMuted;
+        soundFXMute.isOn = isSoundFXMuted;
+
+        // Update the mixer volume based on the mute state
+        UpdateMixerVolume();
+    }
+
+    public void UpdateMixerVolume()
+    {
+        float musicVolumeValue = musicIsOn ? -80f : Mathf.Log10(musicVolume) * 20;
+        musicMixerGroup.audioMixer.SetFloat("Music Volume", musicVolumeValue);
+
+        float soundFXVolumeValue = soundFXIsOn ? -80f : Mathf.Log10(soundFXVolume) * 20;
+        soundFXMixerGroup.audioMixer.SetFloat("Sound FX Volume", soundFXVolumeValue);
+    }
+
     public void onMusicSliderValueChange(float value)
     {
         if (!musicIsOn)
@@ -33,13 +57,10 @@ public class MixerManager : MonoBehaviour
             musicVolume = value;
             musicMixerGroup.audioMixer.SetFloat("Music Volume", Mathf.Log10(musicVolume) * 20);
         }
-
         else
         {
             musicMixerGroup.audioMixer.SetFloat("Music Volume", -80);
-
         }
-
     }
 
     public void onSoundFXSliderValueChange(float value)
@@ -52,36 +73,20 @@ public class MixerManager : MonoBehaviour
         else
         {
             soundFXMixerGroup.audioMixer.SetFloat("Sound FX Volume", -80);
-
         }
-
     }
 
     public void onMusicToggleValueChange()
     {
-        if (!musicIsOn)
-        {
-            musicMixerGroup.audioMixer.SetFloat("Music Volume", -80);
-            musicIsOn = true;
-        }
-        else
-        {
-            musicMixerGroup.audioMixer.SetFloat("Music Volume", Mathf.Log10(musicVolume) * 20);
-            musicIsOn = false;
-        }
+        musicIsOn = !musicIsOn;
+        PlayerPrefs.SetInt(MusicMuteKey, musicIsOn ? 1 : 0);
+        UpdateMixerVolume();
     }
 
     public void onSoundFXToggleValueChange()
     {
-        if (!soundFXIsOn)
-        {
-            soundFXMixerGroup.audioMixer.SetFloat("Sound FX Volume", -80);
-            soundFXIsOn = true;
-        }
-        else
-        {
-            soundFXMixerGroup.audioMixer.SetFloat("Sound FX Volume", Mathf.Log10(soundFXVolume) * 20);
-            soundFXIsOn = false;
-        }
+        soundFXIsOn = !soundFXIsOn;
+        PlayerPrefs.SetInt(SoundFXMuteKey, soundFXIsOn ? 1 : 0);
+        UpdateMixerVolume();
     }
 }
