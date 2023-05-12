@@ -4,15 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.Audio;
 
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField]
     Canvas pauseMenuCanvas, quitMenuCanvas, gameOverCanvas, optionsMenuCanvas;
+    
     [SerializeField]
-    Slider volumeSlider;
-    [SerializeField]
-    Toggle mute;
+    private AudioClip menuClickSound;
+    
     public AudioSource audioSource;
     public AudioListener audioListener;
     public LookAtMouse lookAtMouseScript;
@@ -27,14 +28,13 @@ public class PauseMenu : MonoBehaviour
     public PlayerInZone shopScript;
     public PlayerMove moveScript;
 
-
     void Start()
     {
         pauseMenuCanvas.enabled = false;
         quitMenuCanvas.enabled = false;
         gameOverCanvas.enabled = false;
         optionsMenuCanvas.enabled = false;
-        audioSource = Camera.main.GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
         audioListener = Camera.main.GetComponent<AudioListener>();
 
         zombieDiesScript = FindObjectOfType<ZombieDies>();
@@ -44,7 +44,6 @@ public class PauseMenu : MonoBehaviour
         shopScript = FindObjectOfType<PlayerInZone>();
         moveScript = FindObjectOfType<PlayerMove>();
 
-        volumeSlider.value = AudioListener.volume;
 
     }
 
@@ -52,6 +51,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            PlayMenuClickSound();
             if (quitMenuCanvas.enabled == true)
             {
                 quitMenuCanvas.enabled = false;
@@ -98,20 +98,16 @@ public class PauseMenu : MonoBehaviour
             + PlayerInZone.scoreSpent.ToString();
     }
 
-    public void ChangeVolume()
+    private void PlayMenuClickSound()
     {
-        if (mute.isOn)
-        {
-            AudioListener.volume = 0;
-        }
-        else
-        {
-            AudioListener.volume = volumeSlider.value;
-        }
+        audioSource.PlayOneShot(menuClickSound);
     }
+
+    
 
     public void MM_PauseMenu()
     {
+        PlayMenuClickSound();
         pauseMenuCanvas.enabled = true;
         optionsMenuCanvas.enabled = false;
         quitMenuCanvas.enabled = false;
@@ -123,6 +119,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void mm_Options()
     {
+        PlayMenuClickSound();
         pauseMenuCanvas.enabled = false;
         quitMenuCanvas.enabled = false;
         optionsMenuCanvas.enabled = true;
@@ -131,6 +128,7 @@ public class PauseMenu : MonoBehaviour
 
     public void MM_Resume()
     {
+        PlayMenuClickSound();
         pauseMenuCanvas.enabled = false;
         optionsMenuCanvas.enabled = false;
         quitMenuCanvas.enabled = false;
@@ -145,6 +143,7 @@ public class PauseMenu : MonoBehaviour
 
     public void MM_Quit()
     {
+        PlayMenuClickSound();
         pauseMenuCanvas.enabled = false;
         optionsMenuCanvas.enabled = false;
         quitMenuCanvas.enabled = true;
@@ -153,6 +152,7 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitGame()
     {
+        PlayMenuClickSound();
         Time.timeScale = 0;
         pauseMenuCanvas.enabled = false;
         optionsMenuCanvas.enabled = false;
@@ -162,6 +162,7 @@ public class PauseMenu : MonoBehaviour
 
     public void CancelQuit()
     {
+        PlayMenuClickSound();
         pauseMenuCanvas.enabled = true;
         quitMenuCanvas.enabled = false;
         optionsMenuCanvas.enabled = false;
@@ -170,6 +171,7 @@ public class PauseMenu : MonoBehaviour
 
     public void RestartGame()
     {
+        PlayMenuClickSound();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1;
         SpawnBigZombie.NumberOfBigZombieCurrentlyOnTheMap = 0;
@@ -181,6 +183,7 @@ public class PauseMenu : MonoBehaviour
 
     public void MainMenu()
     {
+        PlayMenuClickSound();
         SceneManager.LoadScene("MainMenu");
 
     }

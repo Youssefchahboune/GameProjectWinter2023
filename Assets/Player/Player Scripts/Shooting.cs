@@ -83,7 +83,7 @@ public class Shooting : MonoBehaviour
         updateGrenadeText();
 
         // Get the audio source component.
-        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource = gameObject.GetComponent<AudioSource>();
         audioSource.clip = shootSound;
     }
 

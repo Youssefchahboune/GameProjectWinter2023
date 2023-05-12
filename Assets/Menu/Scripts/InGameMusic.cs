@@ -10,8 +10,10 @@ public class InGameMusic : MonoBehaviour
     public AudioSource gameMusic;
     public AudioClip mainMusicClip;
     public AudioClip minigunMusicClip;
+    public AudioClip pauseMusicClip;
 
     private bool isMinigunMusicPlaying = false;
+    private bool isPauseMusicPlaying = false;
 
     // Start is called before the first frame update
     void Awake()
@@ -25,18 +27,24 @@ public class InGameMusic : MonoBehaviour
     {
         if (pauseMenuCanvas.enabled || quitMenuCanvas.enabled || gameOverCanvas.enabled || optionsMenuCanvas.enabled)
         {
-            if (gameMusic.isPlaying)
+            if (!isPauseMusicPlaying)
             {
                 gameMusic.Pause();
-            }
-            if (isMinigunMusicPlaying)
-            {
-                gameMusic.clip = mainMusicClip;
-                isMinigunMusicPlaying = false;
+                gameMusic.clip = pauseMusicClip;
+                gameMusic.Play();
+                isPauseMusicPlaying = true;
             }
         }
         else
         {
+            if (isPauseMusicPlaying)
+            {
+                gameMusic.Stop();
+                gameMusic.clip = mainMusicClip;
+                gameMusic.Play();
+                isPauseMusicPlaying = false;
+            }
+
             if (!gameMusic.isPlaying)
             {
                 gameMusic.Play();
