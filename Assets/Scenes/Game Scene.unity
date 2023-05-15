@@ -44205,6 +44205,10 @@ MonoBehaviour:
   shootingScript: {fileID: 715723154}
   shopScript: {fileID: 2143868900}
   moveScript: {fileID: 0}
+  healthScript: {fileID: 715723158}
+  zombieChaseScript: {fileID: 4535620939869350937, guid: 580d5e1002c33794e8b8de1cb32d86d0, type: 3}
+  bigZombieChaseScript: {fileID: 4583270249150285173, guid: cbcdf6b61ffeaee4d9687b7eb073457a, type: 3}
+  medkitScript: {fileID: 715723160}
 --- !u!114 &1765534093
 MonoBehaviour:
   m_ObjectHideFlags: 0

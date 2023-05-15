@@ -27,6 +27,10 @@ public class PauseMenu : MonoBehaviour
     public Shooting shootingScript;
     public PlayerInZone shopScript;
     public PlayerMove moveScript;
+    public HitByZombie healthScript;
+    public ChasePlayer zombieChaseScript;
+    public ChasePlayer bigZombieChaseScript;
+    public MedKitUse medkitScript;
 
     void Start()
     {
@@ -44,11 +48,26 @@ public class PauseMenu : MonoBehaviour
         shopScript = FindObjectOfType<PlayerInZone>();
         moveScript = FindObjectOfType<PlayerMove>();
 
+        SpawnBigZombie.NumberOfBigZombieCurrentlyOnTheMap = 0;
+        Shooting.bulletsShot = 0;
+        ZombieDies.countOfDeadZombies = 0;
+        ZombieSpawns.countOfTotalZombies = 0;
+        ZombieSpawns.countOfZombiesSpawned = 0;
 
+        zombieChaseScript.enabled = true;
+        bigZombieChaseScript.enabled = true;
+        medkitScript.enabled = true;
+        healthScript.enabled = true;
     }
 
     void Update()
     {
+        if (gameOverCanvas.enabled == true)
+        {
+            medkitScript.enabled = false;
+            HitByZombie.currentHealth = 0;
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             PlayMenuClickSound();
@@ -146,6 +165,8 @@ public class PauseMenu : MonoBehaviour
         pauseMenuCanvas.enabled = false;
         optionsMenuCanvas.enabled = false;
         quitMenuCanvas.enabled = true;
+        medkitScript.enabled = false;
+        healthScript.enabled = false;
         Time.timeScale = 0;
     }
 
@@ -160,6 +181,9 @@ public class PauseMenu : MonoBehaviour
         optionsMenuCanvas.enabled = false;
         quitMenuCanvas.enabled = false;
         gameOverCanvas.enabled = true;
+        medkitScript.enabled = false;
+        HitByZombie.currentHealth = 0;
+
     }
 
     public void CancelQuit()
@@ -181,6 +205,10 @@ public class PauseMenu : MonoBehaviour
         ZombieDies.countOfDeadZombies = 0;
         ZombieSpawns.countOfTotalZombies = 0;
         ZombieSpawns.countOfZombiesSpawned = 0;
+        zombieChaseScript.enabled = true;
+        bigZombieChaseScript.enabled = true;
+        medkitScript.enabled = true;
+        healthScript.enabled = true;
     }
 
     public void MainMenu()
