@@ -1,43 +1,37 @@
-# GameProjectWinter2023 (Zombies Apocalypse)
+# Zombies Apocalypse
 
-## Things to do for final project : 
+## Game Description
 
-<del> Create assets for map(s) </del>
+Welcome to "Zombies Apocalypse" - a 2D top-down shooter where survival is key. Your goal is to stay alive as long as possible while accumulating points by taking down hordes of zombies. Explore the map, utilize power-ups and utilities, and strive for the highest score!
 
-- Build the map(s)
+## Installation Requirements
 
-<del> Redraw zombies and player for animation  </del>
+This game is developed using Unity game development software. To run the game, you'll need to open it in Unity and run the project.
 
-<del> Create better assets for bullets  </del>
+## Controls
 
-<del> Draw assets for pop-ups (max ammo, nuke, health kit, grenade?)  </del>
+- **Movement:** W (forward), S (backward)
+- **Aiming:** Mouse
+- **Shooting:** Left-click
+- **Use Medkit:** Spacebar
+- **Shoot Grenade:** Right-click
+- **Buy Station Interaction:** Left Shift
+- **Zoom Out:** D or A
 
-- Maybe add music and audio ?? 
+## How to Run the Game
 
-<del> Implement movement of the player + animation  </del>
+1. Open Unity.
+2. Load the "Zombies Apocalypse" project.
+3. Run the game from the Unity editor.
 
-<del> Implement movement of zombies + animation  </del>
+## Contributing
 
-- Create main menu, pause menu, death menu + score
+At the moment, we are not accepting contributions to the project.
 
-- Add Fog (particle effect)
+## License
 
-- Add spawners
+This project is not currently licensed.
 
-<del> Code Score  </del>
+Feel free to explore, survive, and aim for the highest score in "Zombies Apocalypse"!
 
-<del> Design UI (health bar)  </del>
-
-- Implement ammo station
-
-<del> Add flash effect when hit"  </del>
-
-# Progress (2023-04-16)
-![image](https://user-images.githubusercontent.com/99833243/232360770-d657c494-1653-4e1f-a736-a59e664ed29e.png)
-
-# Progress (2023-04-20)
-![image](https://user-images.githubusercontent.com/99833243/233501545-d127bc2c-2627-4749-b237-ffcb2b90f955.png)
-![image](https://user-images.githubusercontent.com/99833243/233501817-9a3a0d52-0d16-4461-9b40-53629a9d0619.png)
-
-
-
+Happy hunting!
